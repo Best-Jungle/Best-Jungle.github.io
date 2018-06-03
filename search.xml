@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title><![CDATA[如何发布一篇博客]]></title>
+    <url>%2F2018%2F06%2F04%2F%E5%A6%82%E4%BD%95%E5%8F%91%E5%B8%83%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%2F</url>
+    <content type="text"><![CDATA[如何发布一篇博客1执行代码：hexo new [layout] &lt;title&gt; 这里 [layout] 是指布局格式，默认的布局格式为post。在hexo 中一共有3中不同的默认格式： 布局格式 路径 post source/_posts Page source Draft source/_drafts 默认布局格式为 post。先以布局格式为 post 的情况为说明。 首先会在在根目录的下的 source 文件夹中创建了一个 _post 文件夹，并在里面生成一个对应的文件。例如myBlog.md。 s]]></content>
+      <categories>
+        <category>blog</category>
+      </categories>
+  </entry>
+  <entry>
+    <title><![CDATA[Hello World]]></title>
+    <url>%2F2018%2F06%2F03%2Fhello-world%2F</url>
+    <content type="text"><![CDATA[Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick StartCreate a new post1$ hexo new "My New Post" More info: Writing Run server1$ hexo server More info: Server Generate static files1$ hexo generate More info: Generating Deploy to remote sites1$ hexo deploy More info: Deployment]]></content>
+  </entry>
+</search>
