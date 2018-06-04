@@ -1,0 +1,1017 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="spark," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="1、准备工具： 虚拟机：vmware 操作系统 ：ubuntu12.04 （桌面版或server版）(iso文件) java：jdk-7u75-linux-x64.tar.gz oracle官网可下载 hadoop：haopop2.5.2 spark: spark1.1.1 登陆终端 secure crt 文件传输：file zilla 2、具体步骤 （1）、安装vmware —过程略 （2）、新">
+<meta name="keywords" content="spark">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ubuntu12.04 Hadoop+Spark 分布式部署步骤">
+<meta property="og:url" content="http://yoursite.com/2018/06/04/ubuntu12-04-Hadoop-Spark-分布式部署步骤/index.html">
+<meta property="og:site_name" content="长颈鹿先森">
+<meta property="og:description" content="1、准备工具： 虚拟机：vmware 操作系统 ：ubuntu12.04 （桌面版或server版）(iso文件) java：jdk-7u75-linux-x64.tar.gz oracle官网可下载 hadoop：haopop2.5.2 spark: spark1.1.1 登陆终端 secure crt 文件传输：file zilla 2、具体步骤 （1）、安装vmware —过程略 （2）、新">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-06-04T09:34:00.663Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="ubuntu12.04 Hadoop+Spark 分布式部署步骤">
+<meta name="twitter:description" content="1、准备工具： 虚拟机：vmware 操作系统 ：ubuntu12.04 （桌面版或server版）(iso文件) java：jdk-7u75-linux-x64.tar.gz oracle官网可下载 hadoop：haopop2.5.2 spark: spark1.1.1 登陆终端 secure crt 文件传输：file zilla 2、具体步骤 （1）、安装vmware —过程略 （2）、新">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/06/04/ubuntu12-04-Hadoop-Spark-分布式部署步骤/"/>
+
+
+
+
+
+  <title>ubuntu12.04 Hadoop+Spark 分布式部署步骤 | 长颈鹿先森</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="default">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <a href="https://github.com/onlywangyh" class="github-corner" aria-label="View source on Github"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">长颈鹿先森</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">长颈鹿先森的个人博客</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-首页">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-博客搭建">
+          <a href="/categories/blog" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            博客搭建
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-大数据&分布式">
+          <a href="/categories/大数据&分布式" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            大数据&分布式
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-关于我">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于我
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/04/ubuntu12-04-Hadoop-Spark-分布式部署步骤/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="wangyh">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/header.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="长颈鹿先森">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">ubuntu12.04 Hadoop+Spark 分布式部署步骤</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-06-04T17:03:31+08:00">
+                2018-06-04
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/大数据-分布式/" itemprop="url" rel="index">
+                    <span itemprop="name">大数据&分布式</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2018/06/04/ubuntu12-04-Hadoop-Spark-分布式部署步骤/" class="leancloud_visitors" data-flag-title="ubuntu12.04 Hadoop+Spark 分布式部署步骤">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">Visitors&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>浏览
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>次
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>1、准备工具：
+虚拟机：vmware
+操作系统 ：ubuntu12.04 （桌面版或server版）(iso文件)
+java：jdk-7u75-linux-x64.tar.gz oracle官网可下载
+hadoop：haopop2.5.2
+spark: spark1.1.1
+登陆终端 secure crt
+文件传输：file zilla
+2、具体步骤
+（1）、安装vmware —过程略
+（2）、新建虚拟机（3个）安装ubuntu系统 —过程略
+注：下面的步骤无特殊说明则需要在三个虚拟机上同时执行
+（3）、apt-get 更新： apt-get update
+（4）、安装vim openssh客户端，服务端  apt-get instsall vim openssh-client openssh-server
+判断ssh是否正常启动  命令：ps -e |grep ssh
+如果既有sshd 又有ssh-agent 则ssh启动成功</p>
+<p>（5）、安装java环境
+假定准备将java安装在/usr/lib/java中
+则建立该目录：mkdir /usr/lib/java
+通过file zilla 将压缩文件传送到虚拟机上
+解压jdk tar -xzvf jdkxxxxxx
+设置环境变量：
+编辑 /etc/profile文件，在其中加入以下内容
+export JAVA_HOME=/usr/lib/java/jdk1.7.0_75
+export JRE_HOME={$JAVA_HOME}/jre</p>
+<p>保存退出
+令其生效 source /etc/profile
+此时查看java版本 java -version
+如果系统中有多个java环境则需要手动设置默认的jdk
+命令如下：
+sudo update-alternatives –install /usr/bin/javac javac /usr/lib/java/jdk1.7.0_75/bin/javac 300</p>
+<p>sudo update-alternatives –install /usr/bin/java java /usr/lib/java/jdk1.7.0_75/bin/java 300</p>
+<p>sudo update-alternatives –install /usr/bin/jps jps /usr/lib/java/jdk1.7.0_75/bin/jps 300</p>
+<p>此时在输入java -version就可以看到上图的结果了
+（6）、修改hostname+配置hosts
+修改hostname:编辑/etc/hostname文件分别将三台机器的hostname改成master slave1 slave2
+之后重启服务器
+配置hosts：编辑/etc/hosts，添加 ip 和对应的hostname。
+保存退出之后验证三台机器直接ping 各自的hostname是否互通</p>
+<p>（7）、配置ssh
+hadoop是通过ssh来进行节点间的通信，所以要去掉节点间ssh的密码，所以需要对ssh进行配置
+a）、生成公钥：命令：ssh-keygen -t rsa -P “”
+b）、将master公钥保存在authorized_keys下 cat ~/.ssh/id_rsa.pub &gt;&gt; ~/.ssh/authorized_keys  对于本机可用ssh localhost来验证是否设置成功
+c）、将另外两台机器的公钥生成后通过scp命令汇聚到master下命令如下：在目录/root/.ssh中 scp id_rsa.pub root@master:/root/.ssh/id_rsa.pub.slave1(2)
+d）、将所有公钥全部保存在authorized_keys下命令如b
+e）、将设置好的authorized_keys文件发送给两个slave节点，之后验证三台机器是否可以ssh无密码登陆</p>
+<p>（8）、安装hadoop
+解压之前的压缩文件（tar -zxvf）
+设置环境变量：在/etc/profile中添加相应变量
+export HADOOP_COMMON_HOME=/usr/local/hadoopspark/hadoop-2.5.2
+export HADOOP_CONF_DIR=/usr/local/hadoopspark/hadoop-2.5.2/etc/hadoop
+export YARN_CONF_DIR=/usr/local/hadoopspark/hadoop-2.5.2/etc/hadoop</p>
+<p>export HADOOP_COMMON_LIB_NATIVE_DIR=$HADOOP_COMMON_HOME/lib/native
+export HADOOP_OPTS=”-Djava.library.path=$HADOOP_COMMON_HOME/lib”</p>
+<p>export CLASSPATH=.:$JAVA_HOME/lib:$JAVA_HOME/lib/tools.jar
+export PATH=${JAVA_HOME}/bin:${JRE_HOME}/bin:${HADOOP_COMMON_HOME}/bin:${HADOOP_COMMON_HOME}/sbin:$PATH
+保存并使其生效。
+设置hadoop-env.sh（文件位于hadoop归档后的目录的etc/hadoop/中）：
+加入java环境变量
+export JAVA_HOME=/usr/lib/java/jdk1.7.0_75</p>
+<p>此时可验证hadoop是否安装成功：hadoop version
+若能出现hadoop信息说明安装基本成功
+（9）、配置hadoop信息：
+主要配置一下几个文件
+配置之前先建立几se个目录用来保存hadoop执行过程中的相关信息：mkdir tmp hdfs hdfs/name hdfs/data
+1）、etc/hadoop/core-site.xml</p>
+<p><figure class="highlight dts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="params">&lt;configuration&gt;</span></span><br><span class="line">        <span class="params">&lt;property&gt;</span></span><br><span class="line">         <span class="params">&lt;name&gt;</span>fs.defaultFS<span class="params">&lt;/name&gt;</span></span><br><span class="line">         <span class="params">&lt;value&gt;</span>hdfs:<span class="comment">//master:9000&lt;/value&gt;</span></span><br><span class="line">        <span class="params">&lt;/property&gt;</span></span><br><span class="line">        <span class="params">&lt;property&gt;</span></span><br><span class="line">         <span class="params">&lt;name&gt;</span>io.file.buffer.size<span class="params">&lt;/name&gt;</span></span><br><span class="line">         <span class="params">&lt;value&gt;</span><span class="number">131072</span><span class="params">&lt;/value&gt;</span></span><br><span class="line">        <span class="params">&lt;/property&gt;</span></span><br><span class="line">        <span class="params">&lt;property&gt;</span></span><br><span class="line">         <span class="params">&lt;name&gt;</span>hadoop.tmp.dir<span class="params">&lt;/name&gt;</span></span><br><span class="line">         <span class="params">&lt;value&gt;</span><span class="meta-keyword">/usr/</span>local<span class="meta-keyword">/hadoop/</span>hadoop<span class="number">-2.7</span><span class="number">.0</span>/tmp<span class="params">&lt;/value&gt;</span></span><br><span class="line">        <span class="params">&lt;/property&gt;</span></span><br><span class="line"><span class="params">&lt;/configuration&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>2)、etc/hadoop/mapred-site.xml</p>
+<p><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">configuration</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">property</span>&gt;</span></span><br><span class="line">         <span class="tag">&lt;<span class="name">name</span>&gt;</span>mapreduce.framework.name<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">         <span class="tag">&lt;<span class="name">value</span>&gt;</span>yarn<span class="tag">&lt;/<span class="name">value</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">configuration</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>3）、etc/hadoop/hdfs-site.xml</p>
+<p><figure class="highlight dts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="params">&lt;value&gt;</span>Master:<span class="number">50090</span><span class="params">&lt;/value&gt;</span>是网页访问地址</span><br><span class="line"><span class="meta-keyword">/home/</span>hadoop<span class="meta-keyword">/tools/</span>hadoop<span class="number">-2.7</span><span class="number">.0</span>/</span><br><span class="line"><span class="params">&lt;configuration&gt;</span></span><br><span class="line">        <span class="params">&lt;property&gt;</span></span><br><span class="line">         <span class="params">&lt;name&gt;</span>dfs.namenode.secondary.http-address<span class="params">&lt;/name&gt;</span></span><br><span class="line">         <span class="params">&lt;value&gt;</span>Master:<span class="number">50090</span><span class="params">&lt;/value&gt;</span></span><br><span class="line">        <span class="params">&lt;/property&gt;</span></span><br><span class="line">        <span class="params">&lt;property&gt;</span></span><br><span class="line">         <span class="params">&lt;name&gt;</span>dfs.replication<span class="params">&lt;/name&gt;</span></span><br><span class="line">         <span class="params">&lt;value&gt;</span><span class="number">2</span><span class="params">&lt;/value&gt;</span></span><br><span class="line">        <span class="params">&lt;/property&gt;</span></span><br><span class="line">        <span class="params">&lt;property&gt;</span></span><br><span class="line">         <span class="params">&lt;name&gt;</span>dfs.namenode.name.dir<span class="params">&lt;/name&gt;</span></span><br><span class="line">         <span class="params">&lt;value&gt;</span><span class="meta-keyword">/usr/</span>local<span class="meta-keyword">/hadoop/</span>hadoop<span class="number">-2.7</span><span class="number">.0</span><span class="meta-keyword">/hdfs/</span>name<span class="params">&lt;/value&gt;</span></span><br><span class="line">        <span class="params">&lt;/property&gt;</span></span><br><span class="line">        <span class="params">&lt;property&gt;</span></span><br><span class="line">         <span class="params">&lt;name&gt;</span>dfs.datanode.data.dir<span class="params">&lt;/name&gt;</span></span><br><span class="line">         <span class="params">&lt;value&gt;</span><span class="meta-keyword">/usr/</span>local<span class="meta-keyword">/hadoop/</span>hadoop<span class="number">-2.7</span><span class="number">.0</span><span class="meta-keyword">/hdfs/</span>data<span class="params">&lt;/value&gt;</span></span><br><span class="line">        <span class="params">&lt;/property&gt;</span></span><br><span class="line"><span class="params">&lt;/configuration&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>4）、etc/hadoop/yarn-site.xml</p>
+<p><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">configuration</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">property</span>&gt;</span></span><br><span class="line">                      <span class="tag">&lt;<span class="name">name</span>&gt;</span>yarn.nodemanager.aux-services<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">                        <span class="tag">&lt;<span class="name">value</span>&gt;</span>mapreduce_shuffle<span class="tag">&lt;/<span class="name">value</span>&gt;</span></span><br><span class="line">                      <span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">property</span>&gt;</span></span><br><span class="line">                       <span class="tag">&lt;<span class="name">name</span>&gt;</span>yarn.resourcemanager.address<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">                         <span class="tag">&lt;<span class="name">value</span>&gt;</span>Master:8032<span class="tag">&lt;/<span class="name">value</span>&gt;</span></span><br><span class="line">                       <span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line">                     <span class="tag">&lt;<span class="name">property</span>&gt;</span></span><br><span class="line">                               <span class="tag">&lt;<span class="name">name</span>&gt;</span>yarn.resourcemanager.scheduler.address<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">                                 <span class="tag">&lt;<span class="name">value</span>&gt;</span>Master:8030<span class="tag">&lt;/<span class="name">value</span>&gt;</span></span><br><span class="line">                               <span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line">                             <span class="tag">&lt;<span class="name">property</span>&gt;</span></span><br><span class="line">                                <span class="tag">&lt;<span class="name">name</span>&gt;</span>yarn.resourcemanager.resource-tracker.address<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">                                  <span class="tag">&lt;<span class="name">value</span>&gt;</span>Master:8031<span class="tag">&lt;/<span class="name">value</span>&gt;</span></span><br><span class="line">                               <span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line">                            <span class="tag">&lt;<span class="name">property</span>&gt;</span></span><br><span class="line">                                     <span class="tag">&lt;<span class="name">name</span>&gt;</span>yarn.resourcemanager.admin.address<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">                                      <span class="tag">&lt;<span class="name">value</span>&gt;</span>Master:8033<span class="tag">&lt;/<span class="name">value</span>&gt;</span></span><br><span class="line">                                   <span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line">                                <span class="tag">&lt;<span class="name">property</span>&gt;</span></span><br><span class="line">                                 <span class="tag">&lt;<span class="name">name</span>&gt;</span>yarn.resourcemanager.webapp.address<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">                                  <span class="tag">&lt;<span class="name">value</span>&gt;</span>Master:8088<span class="tag">&lt;/<span class="name">value</span>&gt;</span></span><br><span class="line">                               <span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- Site specific YARN configuration properties --&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">configuration</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>（5）、etc/hadoop/slaves
+注意要删除自己本身的节点，或者在配置互信时，加入自己的密钥。
+配置完毕则可以准备0启动hadoop
+下面的过程在master节点上执行相关操作
+namenode的格式化：hadoop namenode -format
+之后到hadoop所在目录启动hadoop：sbin/start-all.sh
+一小段等待后hadoop启动，用jps查看</p>
+<p><figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">DataNode</span></span><br><span class="line"><span class="attribute">Jps</span></span><br><span class="line"><span class="attribute">SecondaryNameNode</span></span><br><span class="line"><span class="attribute">NameNode</span></span><br><span class="line"><span class="attribute">NodeManager</span></span><br><span class="line"><span class="attribute">ResourceManager</span></span><br></pre></td></tr></table></figure></p>
+<p>若出现下面信息则启动成功，可通过web-browser查看相关信息url:http://masterip:50070
+关闭hadoop服务：sbin/stop-all-sh
+若需要重新格式化namenode则需要删除掉tmp 和/tmp/hadoop* 和hdfs/name hdfs/data中的内容</p>
+<p>至此hadoop 分布式部署成功，下面准备在此基础上安装spark（由于spark的工作需要基于hadoop中的hdfs分布式文件系统）
+（10）、安装scala
+解压下载好的压缩文件（tar -zxvf）
+配置环境变量（/etc/profile）
+export SCALA_HOME=/usr/lib/scala/scala-2.11.4
+验证：键入scala：出现scala命令控制行说明安装成功
+（11）、安装spark
+解压文件–过程略
+配置环境变量：编辑conf下的spark-env.sh文件将java scala相关环境变量加入并且配置masterip以及各个worker节点的内存</p>
+<p>export JAVA_HOME=/usr/lib/java/jdk1.7.0_75</p>
+<p>export SCALA_HOME=/usr/lib/scala/scala-2.11.4</p>
+<p>export SPARK_MASTER_IP=192.168.194.129</p>
+<p>export SPARK_WORKER_MEMORY=2g</p>
+<p>export SPARK_CONF_DIR=/usr/local/hadoopspark/spark-1.1.1-bin-hadoop2.4/conf</p>
+<p>配置同目录下的slaves 将所有节点的hostname添加进该文件（三台机器均配置）
+配置完毕启动spark sbin/start-all.sh
+jps命令查看若新增这两个进程即spark成功启动（Master Worker）
+至此spark+hadoop的分布式部署完成</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>Donate comment here</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>Donate</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.jpg" alt="wangyh WeChat Pay"/>
+        <p>WeChat Pay</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.jpg" alt="wangyh Alipay"/>
+        <p>Alipay</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/spark/" rel="tag"># spark</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/06/04/hexo-文件结构/" rel="next" title="hexo 文件结构">
+                <i class="fa fa-chevron-left"></i> hexo 文件结构
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/header.jpg"
+                alt="wangyh" />
+            
+              <p class="site-author-name" itemprop="name">wangyh</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives">
+              
+                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">categories</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/onlywangyh" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:wangyuehan_1993@sina.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">wangyh</span>
+
+  
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>访问人数
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>访问总量
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      次
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("28a4oiiKhqW9fxkHvtaUOWlp-gzGzoHsz", "OU7VBDcQqMfVENMauznmmf8w");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
