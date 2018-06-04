@@ -1,11 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title><![CDATA[如何发布一篇博客]]></title>
-    <url>%2F2018%2F06%2F04%2F%E5%A6%82%E4%BD%95%E5%8F%91%E5%B8%83%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%2F</url>
-    <content type="text"><![CDATA[如何发布一篇博客 1执行代码：hexo new [layout] &lt;title&gt; 这里 [layout] 是指布局格式，默认的布局格式为post。在hexo 中一共有3中不同的默认格式： 布局格式 路径 post source/_posts Page source Draft source/_drafts 默认布局格式为 post。先以布局格式为 post 的情况为说明。 首先会在在根目录的下的 source 文件夹中创建了一个 _post 文件夹，并在里面生成一个对应的文件。例如myBlog.md。 s]]></content>
+    <title><![CDATA[hexo 文件结构]]></title>
+    <url>%2F2018%2F06%2F04%2Fhexo-%E6%96%87%E4%BB%B6%E7%BB%93%E6%9E%84%2F</url>
+    <content type="text"><![CDATA[hexo 文件结构 接着上篇如何发布一篇博客，本篇将分析以下hexo框架中的基本文件结构。 在hexo框架中主要目录结构如下： 12345678|-- _config.yml|-- package.json|-- scaffolds|-- source |-- _posts|-- themes|-- .gitignore|-- package.json _config.yml：全局配置文件，网站的很多信息都在这里配置，诸如网站名称，副标题，描述，作者，语言，主题，部署等等参数。 package.json：hexo框架的参数和所依赖插件。 scaffolds：scaffolds是“脚手架、骨架”的意思，当你新建一篇文章（hexo new 'title'）的时候，hexo是根据这个目录下的文件进行构建的。基本不用关心。 source： 这个目录很重要，新建的文章都是在保存在这个目录下的._posts 。需要新建的博文都放在 _posts 目录下。 _posts 目录下是一个个 markdown 文件。你应该可以看到一个 hello-world.md 的文件，文章就在这个文件中编辑。 _posts 目录下的md文件，会被编译成html文件，放到 public （此文件现在应该没有，因为你还没有编译过）文件夹下。 themes：网站主题目录，hexo有非常好的主题拓展，支持的主题也很丰富。该目录下，每一个子目录就是一个主题。 _config.yml 文件的具体说明 1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465666768697071# Hexo Configuration## Docs: https://hexo.io/docs/configuration.html## Source: https://github.com/hexojs/hexo/# Sitetitle: Hexo #网站标题subtitle: #网站副标题description: #网站描述author: John Doe #作者language: #语言timezone: #网站时区。Hexo 默认使用您电脑的时区。时区列表。比如说：America/New_York, Japan, 和 UTC 。# URL## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'url: http://yoursite.com #你的站点Urlroot: / #站点的根目录permalink: :year/:month/:day/:title/ #文章的 永久链接 格式 permalink_defaults: #永久链接中各部分的默认值# Directory source_dir: source #资源文件夹，这个文件夹用来存放内容public_dir: public #公共文件夹，这个文件夹用于存放生成的站点文件。tag_dir: tags # 标签文件夹 archive_dir: archives #归档文件夹category_dir: categories #分类文件夹code_dir: downloads/code #Include code 文件夹i18n_dir: :lang #国际化（i18n）文件夹skip_render: #跳过指定文件的渲染，您可使用 glob 表达式来匹配路径。 # Writingnew_post_name: :title.md # 新文章的文件名称default_layout: post #预设布局titlecase: false # 把标题转换为 title caseexternal_link: true # 在新标签中打开链接filename_case: 0 #把文件名称转换为 (1) 小写或 (2) 大写render_drafts: false #是否显示草稿post_asset_folder: false #是否启动 Asset 文件夹relative_link: false #把链接改为与根目录的相对位址 future: true #显示未来的文章highlight: #内容中代码块的设置 enable: true line_number: true auto_detect: false tab_replace:# Category &amp; Tagdefault_category: uncategorizedcategory_map: #分类别名tag_map: #标签别名# Date / Time format## Hexo uses Moment.js to parse and display date## You can customize the date format as defined in## http://momentjs.com/docs/#/displaying/format/date_format: YYYY-MM-DD #日期格式time_format: HH:mm:ss #时间格式 # Pagination## Set per_page to 0 to disable paginationper_page: 10 #分页数量pagination_dir: page # Extensions## Plugins: https://hexo.io/plugins/## Themes: https://hexo.io/themes/theme: landscape #主题名称# Deployment## Docs: https://hexo.io/docs/deployment.html# 部署部分的设置deploy:]]></content>
       <categories>
         <category>blog</category>
       </categories>
+      <tags>
+        <tag>hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[如何发布一篇博客]]></title>
+    <url>%2F2018%2F06%2F04%2F%E5%A6%82%E4%BD%95%E5%8F%91%E5%B8%83%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%2F</url>
+    <content type="text"><![CDATA[如何发布一篇博客 自己曾经搭建过无数个博客。从开始自己使用yaf+php自己写编写，到采用GitHub+jeklly。后来也用过腾讯云服务器+WordPress的模式。最近知道了一种新的博客搭建方法，GitHub+hexo的模式。hexo框架有着丰富的主题，并且使用方便。马上要工作了，这次花费了几天搭建了一下新的博客。未来也会慢慢把自己原先的博客，慢慢迁移到这里。 hexo+GitHub搭建比较简单见大神教程 本文主要分析了一下，博客发布的过程。 1执行代码：hexo new [layout] &lt;title&gt; 这里 [layout] 是指布局格式，默认的布局格式为post。在hexo 中一共有3中不同的默认格式： 布局格式 路径 post source/_posts Page source Draft source/_drafts 默认布局格式为 post。先以布局格式为 post 的情况为说明。 首先会在在根目录的下的 source 文件夹中创建了一个 _post 文件夹，并在里面生成一个对应的文件。例如myBlog.md。这时候文件会根据模板，填入相应信息。模板存储在 scaffolds 中，可以根据需要自行修改。 根据不同的模板，决定了 Front-matter 的内容。 Front-matter 是文件最上方以 --- 分隔的区域，用于指定个别文件的变量。例如： 123456---title: 如何发布一篇博客date: 2018-06-04 01:35:26tags: hexocategories: blog--- 在 Front-matter 中有以下预定参数: 参数 描述 默认值 layout 布局 title 标题&lt;span class=&quot;Apple-tab-span&quot; style=&quot;white-space:pre&quot;&gt;&lt;/span&gt; date 建立日期 &lt;span class=&quot;Apple-tab-span&quot; style=&quot;white-space:pre&quot;&gt;&lt;/span&gt;文件建立日期 updated 更新日期 &lt;span class=&quot;Apple-tab-span&quot; style=&quot;white-space:pre&quot;&gt;&lt;/span&gt;文件更新日期 comments 开启文章的评论功能 true tags 标签（不适用于分页） categories 分类（不适用于分页） permalink 覆盖文章网址 其中 tags 都是并列的。categories 则有严格的顺序性和层次性。例如 12345categories:- blogtags:- 技术- 搭建]]></content>
+      <categories>
+        <category>blog</category>
+      </categories>
+      <tags>
+        <tag>hexo</tag>
+      </tags>
   </entry>
 </search>
