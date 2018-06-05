@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="机器学习," />
 
 
 
@@ -79,13 +79,18 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="长颈鹿先森">
-<meta property="og:url" content="http://yoursite.com/archives/2018/index.html">
+<meta name="description" content="adaboost和GBDT和xgboost在损失函数的最优化方法是有很多不同的，三者的不同之处其实就在于最优化方法的不同（这样说不知道是否妥当，至少站在这个角度的我认为是正确的，多年后可能发现这个观点不太妥当）。adaboost在李航博士的《统计学习基础》里面用加法模型和向前算法解释了权值更新策略。在解释的过程中，样本权值更新和弱分类器权值的求取是直接通过偏导数等于零来计算的，如果记不清楚的可以">
+<meta name="keywords" content="机器学习">
+<meta property="og:type" content="article">
+<meta property="og:title" content="从损失函数看-xgboost、GBDT、adaboost">
+<meta property="og:url" content="http://yoursite.com/2018/06/05/从损失函数看-xgboost、GBDT、adaboost/index.html">
 <meta property="og:site_name" content="长颈鹿先森">
+<meta property="og:description" content="adaboost和GBDT和xgboost在损失函数的最优化方法是有很多不同的，三者的不同之处其实就在于最优化方法的不同（这样说不知道是否妥当，至少站在这个角度的我认为是正确的，多年后可能发现这个观点不太妥当）。adaboost在李航博士的《统计学习基础》里面用加法模型和向前算法解释了权值更新策略。在解释的过程中，样本权值更新和弱分类器权值的求取是直接通过偏导数等于零来计算的，如果记不清楚的可以">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-06-05T03:21:12.969Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="长颈鹿先森">
+<meta name="twitter:title" content="从损失函数看-xgboost、GBDT、adaboost">
+<meta name="twitter:description" content="adaboost和GBDT和xgboost在损失函数的最优化方法是有很多不同的，三者的不同之处其实就在于最优化方法的不同（这样说不知道是否妥当，至少站在这个角度的我认为是正确的，多年后可能发现这个观点不太妥当）。adaboost在李航博士的《统计学习基础》里面用加法模型和向前算法解释了权值更新策略。在解释的过程中，样本权值更新和弱分类器权值的求取是直接通过偏导数等于零来计算的，如果记不清楚的可以">
 
 
 
@@ -115,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/archives/2018/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/06/05/从损失函数看-xgboost、GBDT、adaboost/"/>
 
 
 
 
 
-  <title>Archive | 长颈鹿先森</title>
+  <title>从损失函数看-xgboost、GBDT、adaboost | 长颈鹿先森</title>
   
 
 
@@ -140,7 +145,7 @@
     
   
 
-  <div class="container sidebar-position-left page-archive">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <a href="https://github.com/onlywangyh" class="github-corner" aria-label="View source on Github"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
@@ -266,259 +271,221 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block archive">
-    <div id="posts" class="posts-collapse">
-      <span class="archive-move-on"></span>
+  <div id="posts" class="posts-expand">
+    
 
-      <span class="archive-page-counter">
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/05/从损失函数看-xgboost、GBDT、adaboost/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="wangyh">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/header.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="长颈鹿先森">
+    </span>
+
+    
+      <header class="post-header">
+
         
         
+          <h1 class="post-title" itemprop="name headline">从损失函数看-xgboost、GBDT、adaboost</h1>
         
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-06-05T11:08:16+08:00">
+                2018-06-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
           
-        
-        Um..! 6 posts in total. Keep on posting.
-      </span>
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/机器学习/" itemprop="url" rel="index">
+                    <span itemprop="name">机器学习</span>
+                  </a>
+                </span>
 
-      
-
-        
-        
-        
-
-        
+                
+                
+              
+            </span>
           
-          <div class="collection-title">
-            <h1 class="archive-year" id="archive-year-2018">2018</h1>
-          </div>
-        
-        
 
-        
+          
+            
+          
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+          
+          
+             <span id="/2018/06/05/从损失函数看-xgboost、GBDT、adaboost/" class="leancloud_visitors" data-flag-title="从损失函数看-xgboost、GBDT、adaboost">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">Visitors&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
 
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/06/05/深入理解GBDT/" itemprop="url">
-              
-                <span itemprop="name">深入理解GBDT</span>
-              
-            </a>
-        
-      </h2>
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>浏览
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>次
+            </span>
+          
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-06-05T11:22:35+08:00"
-              content="2018-06-05" >
-          06-05
-        </time>
-      </div>
+          
 
-    </header>
-  </article>
+          
 
+        </div>
+      </header>
+    
 
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/06/05/从损失函数看-xgboost、GBDT、adaboost/" itemprop="url">
-              
-                <span itemprop="name">从损失函数看-xgboost、GBDT、adaboost</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-06-05T11:08:16+08:00"
-              content="2018-06-05" >
-          06-05
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/06/04/hexo博客配置/" itemprop="url">
-              
-                <span itemprop="name">hexo 博客配置</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-06-04T23:47:42+08:00"
-              content="2018-06-04" >
-          06-04
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
       
 
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/06/04/ubuntu12-04-Hadoop-Spark-分布式部署步骤/" itemprop="url">
-              
-                <span itemprop="name">ubuntu12.04 Hadoop+Spark 分布式部署步骤</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-06-04T17:03:31+08:00"
-              content="2018-06-04" >
-          06-04
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
+      
+        <p> adaboost和GBDT和xgboost在损失函数的最优化方法是有很多不同的，三者的不同之处其实就在于最优化方法的不同（这样说不知道是否妥当，至少站在这个角度的我认为是正确的，多年后可能发现这个观点不太妥当）。adaboost在李航博士的《统计学习基础》里面用加法模型和向前算法解释了权值更新策略。在解释的过程中，样本权值更新和弱分类器权值的求取是直接通过偏导数等于零来计算的，如果记不清楚的可以回去仔细看一下。不管是做回归还是做分类，adaboost的目标都是找到一个值（通过使得偏导数等零的方法）直接使得损失函数降低到最小。
+ 而GBDT使用的是梯度下降法使得损失函数有所降低。首先说一下为什么会提出这种方法，然后说一下为什么GBDT是使用梯度下降法将损失函数有所降低。这种方法的出现肯定是因为对于某些损失函数，偏导数等于零是可解的，而对于一般的损失函数偏导数等于零是无法求解的，不然梯度下降法也不会存在了。而至于为什么GBDT使用的是梯度下降法将损失函数降低的。首先将损失函数在ft-1（x）处做一阶泰勒展开（这里的ft-1（x）就是前t-1个弱分类器的整合），展开之后是一个常数C 和 梯度g和新的弱分类器f的乘积（就是L = C + gf），这时候如果要让损失函数L变得更小，就要让梯度g和弱分类器f的乘积变得更小，所以就是用负梯度来拟合新的弱分类器。
+ 如果把弱分类器当做步长，那么损失函数就代表沿着梯度走了一步。如果新的弱分类器跟负梯度完美拟合，那么损失函数就变成了L = C + g（-f）= C-gg，所以这时候损失函数是下降了的。如果是这样的话，只要保证新的弱分类器f的向量方向和梯度g相反，而向量模长尽可能大不就行了吗？答案当然是不行的，因为我们做的是损失函数在ft-1（x）的泰勒展开啊，如果步长太长的话沿着梯度相反的方向走一步，误差就大了。所以步长也要小一点。在这不知道为什么定义步长f的模和梯度的模相等，可能Freidman有所考虑的吧,如果后续让我来改进，我就从该地方入手，选择多长的步长也就是-a*g来拟合新的弱分类器f，其中a&gt;0。
+ xgboost损失函数同样是在ft-1（x）处做泰勒展开，不同的是做的二阶泰勒展开，而且还附带了对树叶子节点约束、权值模长（其实可以考虑为步长）约束的正则项。当然在GBDT里面一样可以做这些正则项约束，这里面并不是xgboost特有的，但是不同的地方就是xgboost损失函数在ft-1（x）处做二阶泰勒展开。对就是从二阶泰勒展开入手去最优化损失函数的。</p>
 
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/06/04/hexo-文件结构/" itemprop="url">
-              
-                <span itemprop="name">hexo 文件结构</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-06-04T16:42:57+08:00"
-              content="2018-06-04" >
-          06-04
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/06/04/如何发布一篇博客/" itemprop="url">
-              
-                <span itemprop="name">如何发布一篇博客</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-06-04T01:35:26+08:00"
-              content="2018-06-04" >
-          06-04
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
     </div>
+    
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>Donate comment here</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>Donate</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.jpg" alt="wangyh WeChat Pay"/>
+        <p>WeChat Pay</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.jpg" alt="wangyh Alipay"/>
+        <p>Alipay</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/机器学习/" rel="tag"># 机器学习</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/06/04/hexo博客配置/" rel="next" title="hexo 博客配置">
+                <i class="fa fa-chevron-left"></i> hexo 博客配置
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/06/05/深入理解GBDT/" rel="prev" title="深入理解GBDT">
+                深入理解GBDT <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
 
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -526,6 +493,10 @@
 
 
           
+
+  
+
+
 
         </div>
         
@@ -785,6 +756,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
