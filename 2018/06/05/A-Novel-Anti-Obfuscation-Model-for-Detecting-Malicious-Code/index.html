@@ -1,0 +1,1048 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="论文," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="A Novel Anti-Obfuscation Model for Detecting Malicious Code Yuehan Wang   Tong Li  YongQuan Cai  Zhenghu Ning   Fei Xue Abstract In this article, the authors present a new malicious code detection mod">
+<meta name="keywords" content="论文">
+<meta property="og:type" content="article">
+<meta property="og:title" content="A Novel Anti-Obfuscation Model for Detecting Malicious Code">
+<meta property="og:url" content="http://yoursite.com/2018/06/05/A-Novel-Anti-Obfuscation-Model-for-Detecting-Malicious-Code/index.html">
+<meta property="og:site_name" content="长颈鹿先森">
+<meta property="og:description" content="A Novel Anti-Obfuscation Model for Detecting Malicious Code Yuehan Wang   Tong Li  YongQuan Cai  Zhenghu Ning   Fei Xue Abstract In this article, the authors present a new malicious code detection mod">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-06-05T15:24:20.206Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="A Novel Anti-Obfuscation Model for Detecting Malicious Code">
+<meta name="twitter:description" content="A Novel Anti-Obfuscation Model for Detecting Malicious Code Yuehan Wang   Tong Li  YongQuan Cai  Zhenghu Ning   Fei Xue Abstract In this article, the authors present a new malicious code detection mod">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/06/05/A-Novel-Anti-Obfuscation-Model-for-Detecting-Malicious-Code/"/>
+
+
+
+
+
+  <title>A Novel Anti-Obfuscation Model for Detecting Malicious Code | 长颈鹿先森</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="default">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <a href="https://github.com/onlywangyh" class="github-corner" aria-label="View source on Github"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">长颈鹿先森</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">长颈鹿先森的个人博客</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-首页">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-博客搭建">
+          <a href="/categories/blog" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            博客搭建
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-大数据&分布式">
+          <a href="/categories/大数据-分布式" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            大数据&分布式
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-机器学习">
+          <a href="/categories/机器学习" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            机器学习
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-个人成果">
+          <a href="/categories/个人成果" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            个人成果
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-关于我">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于我
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/05/A-Novel-Anti-Obfuscation-Model-for-Detecting-Malicious-Code/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="wangyh">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/header.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="长颈鹿先森">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">A Novel Anti-Obfuscation Model for Detecting Malicious Code</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-06-05T21:34:53+08:00">
+                2018-06-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/个人成果/" itemprop="url" rel="index">
+                    <span itemprop="name">个人成果</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2018/06/05/A-Novel-Anti-Obfuscation-Model-for-Detecting-Malicious-Code/" class="leancloud_visitors" data-flag-title="A Novel Anti-Obfuscation Model for Detecting Malicious Code">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">Visitors&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>浏览
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>次
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1>A Novel Anti-Obfuscation Model for Detecting Malicious Code</h1>
+<p><em>Yuehan Wang   Tong Li  YongQuan Cai  Zhenghu Ning   Fei Xue</em></p>
+<h2>Abstract</h2>
+<p>In this article, the authors present a new malicious code detection model. The detection model improves typical n-gram feature extraction algorithms that are easy to be obfuscated. Specifically, the proposed model can dynamically determine obfuscation features and then adjust the selection of meaningful features to improve corresponding machine learning analysis. The experimental results show that the feature database, which is built based on the proposed feature selection and cleaning method, contains a stable number of features and can automatically get rid of obfuscation features. Overall, the proposed detection model has features of long timeliness, high applicability and high accuracy of identification</p>
+<h3>Keyword：</h3>
+<p><em>Malicious、Machine Learning、Feature Extraction、Obfuscation</em></p>
+<h2>1 Introduction</h2>
+<p>The malicious code is a kind of software that is intended to damage or disable computers and computer systems, including computer Trojans, blackmail software, spyware, and so on . According to Symantec (2015), more than 44.5 million new pieces of malware created in May 2015. One of the main reasons for this high volume of malware samples is the extensive use of obfuscation and metamorphic techniques by malware developers . So the most of new malicious code can be divided into several families by the original code .
+The malicious code detection technologies are usually based on features, which represent the original software code. Thus, same malware familys should have the same features (e.g., Wołkowicz &amp; Kešelj (2013) and Preda &amp; Giacobazzi (2005)). By extracting the family features in each malware family, the defense systems can constructs a feature database for detecting variants. However, the obfuscation techniques can help variants to escape the detection by interfering the feature extraction. For example, in the malicious defense system (Lu, Wang, Zhao, Wang, &amp; Su, 2013) which extracting the key string as a feature. Variants escape the detection by equivalently replacing the key string or adding the invalid string. Many scholars (Shafiq, Tabish, Mirza, &amp; Farooq, 2009; Sung, Xu, Chavez, &amp; Mukkamala, 2004; Gaudesi, Marcelli, Sanchez, Squillero, &amp; Tonda, 2016; Tabish, Shafiq, &amp; Farooq,2009) have proposed various feature extraction methods to defend against this kind of obfuscation technology. But such extraction methods can also be broken by emerging obfuscation technology. On the other hand, more effectively extraction methods will also lead to excessive computing resources, systems real-time poor and so on.
+Machine learning model (Tahan, Rokach, &amp; Shahar, 2012; Narouei, Ahmadi, Giacinto, Takabi, &amp; Sami, 2015; O.W.D.C., 1992) are used to deal with detection malicious code, which have achieved good results. Through the feature database and labels, the model will train a set of classifiers to identify the variants. However, the accuracy of machine learning model depend on the quality of feature database, so that the feature extraction method will determine the accuracy of model . When the extraction method is broken, the obfuscation technologys (Nataraj, Karthikeyan, Jacob, &amp; Manjunath, 2011; Fredrikson, Jha, Christodorescu, Sailer, &amp; Yan, 2010; Svetnik et al., 2003) will make feature database contains a lot of obfuscation features and the accuracy will be be seriously influenced .For the machine learning model used in detection malicious code, ensuring the effectiveness of feature database is an essential research task . In particular, due to the rapid growth of malicious code, the timeliness of feature extraction method becomes more and more short. In addition, it becomes increasingly difficult to maintain the security of the system by using the replacement feature extraction method.
+In this article, we propose a method to ensure the effectiveness of feature database which cleans the feature database rather than changing the extraction method.The method was guided by the obfuscation features cleaning and feature selection. The final database will be used in the random forests algorithm.The main contributions of this paper are summarized as follows:
+<em>1. An algorithm based on multi-sample analysis is proposed to identity obfuscation features dynamically. This method get through analyzing some numbers of sample data in detail and builds a linear regression algorithm. This linear algorithm is used to compute the thresholds of the obfuscation features dynamically for each sample.</em></p>
+<p><em>2. A feature selection algorithm is proposed to select family feature. The method first normalizes the eigenvector and identify the family feature according to the number of input data set.</em></p>
+<p><em>3. Achieving the malicious code detection model. The model use random forest algorithm to reduce the effect of obfuscation technologys furtherly and improves the data utilization.The detection of result by the classifier voted.</em></p>
+<h2>2. METHODOLOGY</h2>
+<p>In this paper, the main research content is to clean the feature database based on the machine learning malicious code detection system. The n-gram algorithm is one of the earliest feature extraction algorithms for malware code and the feature has a stronger readable and interpretable that extract by the extraction method. It is impossible to guarantee the feature extraction algorithm never be broken. So this paper choose n-gram feature extraction method to build the feature database. The modern obfuscation technologys make n-gram algorithm is invalid and the feature database is full of obfuscation and noisy feature. So the final feature database was guide by the obfuscation features cleaning method and feature selection method. The two clean method make the feature database has a good anti-interference, and replace the bad features automatically with the training samples increased.
+As shown in Figure 1. Firstly, this paper construct the linear regression algorithm to identity the obfuscation features and clean dynamically.Secondly, the normalizing method make the eigenvalues range be uniform so that the feature selection method will not be affected by the range of eigenvalues. The feature selection method will guide the train database to select the family features. Finally, this paper choose random forest algorithm to construct the classifier cluster. For the test set samples, the final result is voted on by the cluster. The overall flow chart of the model is shown in Figure 1:</p>
+<h3>2.1. Initial Feature Database Construction</h3>
+<p>The n-gram algorithm is one of the most primitive malicious code feature extraction methods, which requires less malicious code acquisition and lower computational resources. According to this kind of extraction method, the features can be described from the perspective of the real semantics. This model actually characterizes the importance of each feature by counting the number of occurrences of each feature in a single sample.The obfuscation technology confuse the sequence of operations code and produced a lot of obfuscation features, greatly changing the distribution of the features of the sample. The value of obfuscation features are very large, resulting in the problem that these features have an important impact on the model.</p>
+<p>For a “.asm” malicious code disassembler, mainly by the paragraph start identifier, memory address, bytecode, opcode and parameters formed.
+Disassembly program fragment as shown in Figure 2, segment that corresponds to the current instruction belongs to the paragraph, address means memory address, bytes corresponding to the hexadecimal code, opcode means opcode and operands are passed parameters. For a disassembled file, we can extract the corresponding opcode by locating “.text” and obtain the malicious code n-gram features.</p>
+<h3>2.2. Obfuscation Features Cleaning Method</h3>
+<p>The feature database is full of obfuscation and noise features.If the features database is used for training, the model would be likely to appear a serious over-fitting phenomenon, that the mode cannot detect new variants in the future. Therefore, it is necessary to clean the obfuscation features in the database. Due to the complexity of the samples in the training set, the obfuscation technologs used in each sample is different and the feature distribution is also different. Therefore, for each sample, it is necessary to calculation the value of obfuscation features dynamically. It is more reasonable to find the minimum value and clear others obfuscation features which larger than the value.</p>
+<p>The thresholds of the obfuscation value (ξ) are dynamically changed in each sample. In order to measure and characterize the size of the value effectively, we define the following two indicators: the expected value (Feature_averages) and the feature standard (Feature_median). These two indicators are obtained by solving a single sample dynamically, which are used to describe the distribution of features in the sample. α and β represent the proportion of the characteristic expected value and the characteristic standard value in the feature obfuscation value respectively. The feature obfuscation threshold is calculated as shown in Equation (1), which reflects the relationship between the threshold and the expected standard values:
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ξ = α <span class="bullet">* Feature_averages + β *</span> Feature_median</span><br></pre></td></tr></table></figure></p>
+<p>For a malicious code sample, the features expected value ( Featureaverages represents the ideal value of the feature in the most primitive case of the sample. However, the n-gram algorithm will extract a lot of noisy features naturally which only appeared small amounts. If all feature are directly manipulated, the expected value will be seriously underestimated. The noisy features will be removed through the feature selection method. In this section, the method is used to remove the larger feature value. Therefore, when calculating of the expected value ( Feature_averages , the first step is to delete the same feature value, and then do the average operation. The expected value of the feature is calculated as shown in Equation (2), “m” is the number of residual features after removing the repetition, and the featurei represents the value of the each features.
+<figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">Feature_averages</span> = ∑feature(i)/m</span><br></pre></td></tr></table></figure></p>
+<p>The feature expected value can only be used to describe the current sample feature distribution. In order to describe the actual semantics of the sample this paper points out the characteristic standard value ( Featuremedian , which is obtained by calculating the median of all the features in the sample. It can reflect the ideal value of the feature when the sample is undisturbed. The distribution of features in a malicious code sample tends to be a Gaussian distribution, the obscure feature has a very small proportion in its feature distribution. Therefore, the range of the ideal feature can be obtained by solving the median value in the distribution.The characteristic standard value is calculated by the following formula 3, m is the number of residual features after removing the repetition, and the featurei represents the feature of the feature(i). The mid function is the median of the solution sequence.
+<figure class="highlight lisp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Feature(<span class="name">median</span>) = mid(<span class="name">feature</span>(<span class="number">1</span>),feature(<span class="number">2</span>),...,feature(<span class="name">m</span>))</span><br></pre></td></tr></table></figure></p>
+<p>By defining two indicators above, we can describe the obfuscation threshold for each malicious sample dynamically. However, the sample set is always very large. It is a very difficult task to analyze all the malicious code samples manually and find the appropriate weight parameter (α, β) to describe the obfuscation threshold. Linear regression is a statistical analysis method that uses the regression analysis in mathematical statistics to determine the quantitative relationship between two or more variables. Therefore, this paper chooses linear regression to learn the value of the parameter (α, β) and calculate the obfuscation threshold in each sample. However, each sample in the set has only the family label and it is useless to identify the obfuscation features. Thus,we should study a small number of samples and make the label of obfuscation features firstly. Then train the linear regression equation based on the labels. The finial equation can be used to predict the obfuscation threshold in unknown samples. The main steps are as follows:</p>
+<ol>
+<li>Randomly select multiple malicious code sample files.</li>
+<li>Artificial analysis of sample files to extract the obfuscation threshold.</li>
+<li>Extracting the feature values and characteristic values of each sample.</li>
+<li>Selecting 70% of the samples as the training samples of the model, and 30% of the samples as the test samples of the model.</li>
+<li>Selecting the characteristic prediction value and the characteristic standard value as the model input data and the obfuscation threshold as the prediction data of the model. Inputting Linear Regression Prediction Model Training.</li>
+<li>The final linear regression equation is obtained to dynamically describe the confounding threshold of the sample.</li>
+</ol>
+<h2>2.3. Feature Selection Method</h2>
+<p>The n-gram algorithm will extract many noisy features. they will result in some problems, including unclear data features, overheaded model calculation and other issues.Although most of smaller feature values are made up of the noisy data, some of them are important family features in the malicious code. If all the smaller features are cleared, the accuracy of the model will be interfered inevitably. This paper points out a way to quantify the importance of characterization based on the size of the input training data set. If a small feature feature belongs to the noisy data in the overall training set, the feature will only appear in a few samples. And, if it belongs to family features, it will be repeated in the same samples. Therefore, we can select the family features by summing all the sample features.
+Before constructing the feature selection scheme, this paper refers an operation of feature normalization. Due to the diversity of malicious code samples, the range of eigenvectors in each sample is also different. For the same value of the feature, the importance is different. In order to eliminate the impact of the final measurement of the features which caused by different ranges, this paper presents a standardized operation based on occupancy. For a single sample, the importance of each feature in the sample is measured by calculating the ratio and sum. The characteristic criterion algorithm is as follows: Equation (4), m is the number of all the features in the current sample and
+feature' represents the new value of the feature after the standardization.
+<figure class="highlight erlang"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="title">feature</span><span class="params">(i)</span> = <span class="title">feature</span><span class="params">(i)</span>/∑<span class="title">feature</span><span class="params">(i)</span>     <span class="params">(<span class="number">4</span>)</span></span></span><br></pre></td></tr></table></figure></p>
+<p>From the formula we can see that for the normalized training feature database, the sum of all features of a single sample is 1. Therefore, for the total number of samples S, the sum of all features is S. This paper proposes a feature selection method based on the number of input sample S and the number of malicious code family n in the training set. Since the family features will be repeated in the same family, they will increase the size of the final feature after they have been accumulated. As shown in Equation (5), the value of the Featurei or a feature is the sum of the values of the feature in all sample files. Featurei is the value of the final i-th feature, S is the number of training set samples and Featurei represents the value of the current feature in each sample.
+<figure class="highlight gcode"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Feature<span class="comment">(i)</span> = ∑feature<span class="comment">(i)</span>   <span class="comment">(5)</span></span><br></pre></td></tr></table></figure></p>
+<p>By studying a small number of samples, we find that for a single sample, the number of features that can usually be extracted is much larger than 100 and floats around 1000. Thus, for a valid feature, the proportion in the sample feature sequence is higher than 0.001. Taking into account that each feature is finally summed by the corresponding features in each sample. So the final selection for the training of the features should meet the following formula 6. Featureselect is the final selection feature for the training signature, S is the total number of training samples and n is the number of malicious code family categories in the sample.
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="title">Feature</span><span class="params">(select)</span></span> &gt; S*<span class="number">0.001</span>/n     (<span class="number">6</span>)</span><br></pre></td></tr></table></figure></p>
+<h3>2.4. Classifier Cluster Construction</h3>
+<p>Due to the complexity of malicious code variants, the final feature database is also very difficult to remove all invalid features completely. Therefore, it is necessary to sample the set and put back. it will improve the generalization and diversity of data sets. The final detection system will be better in anti-interference, robustness. The stochastic forest tree model is an improved model based on the decision tree. The model constructs multiple decision trees by selecting the sample combination feature vector randomly. The malicious database are taken by random sampling with replacement.The different sample set maximizes the utilization rate of the database, which improves the ability of the model for detection future variants of malicious code. The random forest model is shown in Figure 3:</p>
+<p>When the random forest in training, it will choose different features to build database randomly. In the training feature database that used by the model, some bad features cannot be cleaned up which means there are still some obfuscation features. For the single random node in the model, since the input feature may contain obfuscation features, the final output classifier maybe have some poor bad classifier. However, after the previous obfuscation process, the vast majority of the obfuscation features in the training database has been cleared. What is more, the remaining bad features have only a small proportion in the feature database. By extracting the feature randomly, the effect of the bad features on the final classification can be further relieved.</p>
+<h2>3. eXPeRIMeNTAL DATA AND RESULTS ANALYSIS</h2>
+<h3>3.1. experimental environment and Test Data</h3>
+<p>The malicious code anti-obfuscation model based on large data is used by the database provided by Microsoft. The set contains a set of known malware files representing a mix of 9 different families. Each malware file has an Id, a 20 character hash value uniquely identifying the file, and a Class, an integer representing one of 9 family names to which the malware may belong:1. Ramnit, 2. Lollipop, 3. Kelihos_ver3, 4. Vundo, 5. Simda, 6. Tracur, 7. Kelihos_ver1, 8. Obfuscator.ACY, 9. Gatak. For each file, the raw data contains the hexadecimal representation of the file’s binary content, without the PE header (to ensure sterility). The total of number of malicious code samples is 10868. The malicious code sample test set is described below in Figure 4:</p>
+<h3>3.2. experimental Design</h3>
+<p>This experiment mainly verifies the validity of the two feature processing methods mentioned above. According to the previous papers (Svetnik et al, 2003; Latinne, Debeir, &amp; Decaestecker, 2001), The value of the sliding window n in the n-gram algorithm will be taken as 3 and the number of trees in the random forest algorithm is chosen as 100. Control variables in this experiment include the size of input set, the method of cleaning the obfuscated features, the method of feature selection and the method of standardized processing.</p>
+<p>The method of cleaning the obfuscated features will effect the selection method.Therefore, the first part of experiment will be carried out without feature obfuscation value cleaning process, testing the different feature selection method on the impact of the model. In this experiment, the sample set size 1000, 2000 is to test the effect of set size and schemes on accuracy when the number of samples is lacking. The 5000 is to verify the upper limit of accuracy on schemes when the number of samples is abundance. This experiment also verifies the validity of the normalizing by the A and B series schemes. The selection criteria are adjusted manually according to the analysis of data set. The specific feature selection scheme, and the corresponding parameter selection are shown in Table 1:</p>
+<p>The A1 and A2 schemes are used to verify the effectiveness of manual analysis and to compare with the other schemes. The B1 and B2 schemes are used to verify the effectiveness of normalizing. And the C1 schemes is the feature selection method of the paper.</p>
+<p>In order to evaluate the effect of obfuscation feature cleaning method effectively. This paper select the C1 feature selection method, and tests the effect of different cleaning schemes on the accuracy. Considering the A1 and A2 scheme, select the features that the sum of values larger than 300 or 500. Therefore, in the E1 and E2 scheme, feature values which larger than 300 or 500 are selected for cleaning. The specific obfuscation features cleaning scheme is shown in Table 2:</p>
+<p>E1 and E2 schemes are mainly used to compare the impact of different cleaning conditions on the final program. F1 and F2 schemes are the same in condition, the value of ξ is the threshold of obfuscation features. In addition to compare the effects of different condition with E1, E2 programs, the effects of different cleaning methods on the final results were also tested.</p>
+<h3>3.3. experimental Results and Analysis</h3>
+<p>Firstly, this paper tests the accuracy of each scheme in different data sets to verify the effectiveness of the random forest algorithm. Considering the random forest algorithm constructs the training subset by extracting the method randomly, the accuracy of each model is different. As shown in Figure 5, the relationships between times of tests and accuracy. The model is based on the A1 test scheme in different input data sets and its tested accuracy.</p>
+<p>The abscissa indicates the number of model constructions and the ordinate indicates the accuracy of the model. From Figure 5 we can figure out that with the growth of the input data set, the accuracy will increase at the same time and the degree of volatility will reduce gradually. When the input data set reaches a certain threshold, it would be hard to improve the accuracy by increasing the data set continually. The reason is that when the data set is lacking, the feature database is also not comprehensive enough. The classifiers could be affected by the bad features, it will lead to lower and unstable on accuracy. When the data set is adequate, the accuracy of a single classifier will be improved and the predictions between the classifiers tend to be consistent.</p>
+<h4>3.3.1. Comparison of Feature Selection Schemes</h4>
+<p>In the contrast experiment of the feature selection method, the A1, A2, B1, B2 and C1 schemes verify the validity of the feature selection method. The effect of different schemes on the accuracy is described below in Figure 6:</p>
+<p>As we can see from Figure 6. For all scheme, the accuracy will increase as the input data set increases. And the A2 scheme is able to achieve the best accuracy of 0.976. A1 scheme is the only test scheme in which the model accuracy is reduced as the input sample set grows. The reason for the decrease in accuracy will be analyzed later. For A2,B1,B2C1 scheme, it is difficult to measure the differences because their accuracy is closer. this paper compare the relationship between the accuracy and the number of features in these schemes. As shown in Figure 7 feature selection test program accuracy and characteristic relationship:</p>
+<p>From the Figure 7 of A1, we can see that when the input sample reaches 5000, the number of features in the model training feature database is more than 8,000. Excessive quantity of features will lead to obscure model features, increased interference of obfuscation features and so on. The parameters used in the B1 and B2 test schemes are different in different input data sets and the number of features is also change greatly. For example, when the number of input samples reaches 1000, the numbers of features are much lower than the other test programs and the accuracy is also weak. While, when the number of input samples reaches 2000, you can get the best detection results.</p>
+<p>Compared with the results of the B1, B2 test methods, C1 test method has a stronger adaptability, the number of features reach to 1000 stably. In order to verify the feature selection method proposed in this paper and ensure the stability of the final extracted feature number, this paper tests the relationship between the accuracy and the number of features in all test schemes (E1, E2, F1, F2, C1))) by using the feature selection method. At the same time, in order to compare the unused feature selection methods, this article also joined the A1, A2 test program as a comparison. As shown in Figure 8 feature selection method validation:</p>
+<p>Figure 8 shows that the use of C1 feature selection method of the test program, the final selection of the number of features is more stable. The final accuracy of the model will increase steadily with the number of the input sample set when the variation of the characteristic number is small. Due to the dynamic selection of features, will be based on the number of the input sample set to adjust the selected features. When the input sample set is increased, the feature selection method will also improve the selection of the features of the features to achieve the features of the elimination of poor features.</p>
+<h4>3.3.2. Obfuscation Value Cleaning Scheme Comparison</h4>
+<p>Although we can guarantee the stability of the number of features used in the model by adjusting the selection method dynamically. However, the method of cleaning the obfuscated features will influence the effect of the accuracy greatly. From Figure 6 can be learned, the accuracy in C1 scheme is lowest, the final detection accuracy has a greater space for improvement. In order to evaluate the impact of the clean obfuscation features method on the model and the differences between different methods. This paper compares the C1, E1, E2, F1, F2, 5 different schemes.In particularly, the C1 scheme has no clean the obfuscation features and the others schemes has different clean method. The model accuracy of each scheme and the sample set relations as shown in Figure 9. Accuracy and input sample set relationship:</p>
+<p>As shown in Figure 9, the E1, E2, F1, and F2 schemes higher in the final model accuracy than the C1 scheme. The obfuscation feature cleaning method improved accuracy. It is worth mentioning that, for F1, F2 scheme is the same way to find out the obfuscation threshold. But the F1 scheme reduce the obfuscation features value to the obfuscation threshold and the F2 scheme choice reduce to zero. In the F1 scheme the accuracy reducing with the increase in the number of samples. The reason is that F1 scheme changes the feature distribution of the sample by changing the value of the obfuscated features in the sample. Since the value of obfuscated features is still greater than zero after the change and this kind of the feature distribution can be learned by the model. When the input sample size is small, this way will improve the accuracy of the model. However, when the input sample continues to increase, this changing have a certain conflict with the actual feature distribution and the accuracy will be reduced . The F2 scheme clean the obfuscation features from the sample distribution. And this change has not been studied by the model, so there is no human impact the accuracy will be more real.</p>
+<p>Since the E1, E2 and F2 schemes has adopted the C1 feature selection method, the model detection accuracy and the number of features are closer to each other . The random forest features will select features randomly.Thus,the more obfuscation features in the database, the more unstable the final result. When repeated experiments, the detection accuracy of large fluctuations means the obfuscation features clean schemes is worse. If the number of experimented is small, the results are difficult to observe.In this paper, we choose experimented 100 times for the every test schemes E1, E2 and F2. It is enough to observe the result. The cleaning effect of each test scheme is measured by comparing the degree of volatility of the final model accuracy of each test scheme. The accuracy and frequency of each obfuscation cleaning scheme are shown in Figures 10, 11, 12:</p>
+<p>In order to measure the detection accuracy of the fluctuations of the test scenarios in Figure 10- 12 in different data sets, the standard deviation is used to measure the volatility of the final model accuracy of each test scheme in this paper. The standard deviation is calculated from the square root of the arithmetic mean of the squared difference squared, reflecting the degree of discretization of a data set. The average number of the same two sets of data, the standard deviation may not be the same. This paper counts the standard deviations of the cleaning schemes in different input samples, as shown in Table 3.</p>
+<h2>4. RELATED WORK</h2>
+<p>At present, the research of malicious detection technology is mainly focus on the feature extraction. In terms of the features extraction in malicious code (Rieck, Trinius, &amp; Willems, 2011; Li, Santorelli, Laforest, &amp; Coates, 2015; Yong &amp; Zuo, 2007), they have been studied by previous researchers fully. In order to defent against obfuscation technologys, a various of methods of malicious code feature extraction have been proposed by researchers. These methods from the security attributes, dependencies, real semantics and so on. The modern extraction method focuses on the the actual semantics of malicious code. This kind of semantic-based method can express the actual behavior of malicious code. It has strong interpretability, easy to maintain the actual analysis of personnel and the development of the detection strategy. The related work in this paper will be introduced from the malicious code detection technology and feature extraction methods these two aspects.</p>
+<h3>4.1. Detection Technology</h3>
+<p>In general, malicious code detection techniques can be divided into two types of technology (Shahzad &amp; Lavesson, 2013), including the detection method based on heuristic and the detection method based on signature. Early detection methods are mostly based on heuristic, the requirements of this detection method about the researchers’ experience and judgment are very high. For example, the Rootkit Revealer (Willems, Holz, &amp; Freiling, 2007) detection system identifies hidden processes, files and associated registry information by comparing system upper-level information and file system status from the kernel. The detection effect of this type of detection system depends on the degree of research on the system, it does not have generalization and versatility. Therefore, most of the detection systems is based on feature database.</p>
+<p>Machine learning model can predict variants well based on database, the modern detection systems used machine learning to train classifiers .The detection technique could be divided into three steps (Yin, Song, Egele, Kruegel, &amp; Kirda, 2007; Narudin, Feizollah, Anuar, &amp; Gani, 2014), the first step is the extraction of the features of malicious code. Second, removing obfuscation features, fusion and building low-dimensional features database. Finally, the machine learning algorithms use features database to train the classifier and identity the classification of malicious code.</p>
+<p>The malicious code detection system which based on signature (Abawajy, Kelarev, &amp; Chowdhury, 2014) constructs the feature database of a kind of malicious code by extracting the morphological features of executable binary file. After the same feature has been extracted from the malicious code to be detected, it is detected by pattern matching with the feature database. However, this method could only match a single malicious code. With the increase number of the sample, the data volume of the feature set is often very large, which is not conducive to the automatic detection of malicious code in the future. With the progress of dis-assembly technology, hidden sensitive vocabulary, special methods, resource calls could be found through the dis-assembly technology on the malicious code dynamic analysis in the malicious code samples. Therefore, researchers have proposed the detection method that based on these behavioral features. Behavior-based detection methods pay more attention to the actual behavior of malicious code and have a better ability to defence obfuscation operation.</p>
+<h3>4.2. Malicious Code Feature extraction</h3>
+<p>The use of a single feature extraction method does not have good anti-jamming and stability. When the extraction method is compromised, the monitoring system will break generally. In this case, some scholars (Kirda, Kruegel, Banks, Vigna, &amp; Kemmerer, 2006) proposed for the malicious code for multi-feature extraction and the extraction of the features of the fusion. So that it could get more robust anti-interference malicious code family core features. This multi-feature extraction and fusion method enhances the anti-jamming of the features. The malicious code can’t fully affect the fusion features. So it is difficult to influence the final result.</p>
+<p>Kirda and others (Rui, Feng, Yi, &amp; Pu-Rui, 2012) use spy code to obtain user-sensitive data and then leak the behavior of the data features of the test. But this method is limited to the detection of spy malicious code, other data does not cause the disclosure of malicious code could not be detected. From the perspective of the actual semantic code of malicious code, Rui et al. (2012) and others use feature map to calculate malicious code by constructing a behavioral feature map based on malicious code semantics. It has achieved very good detection results. However, this method is based on the detection method of the program itself merely. It cannot recognize some special variants of malicious code without taking into account the program for the resource call problem.</p>
+<p>Mao et al. (2017) and others (Zhang, Ren, Jiang, &amp; Zhang, 2015) proposed an active learning method that solves the problem of malicious code detection when the labeled samples are less marked. The feature extraction method mainly constructs the system data flow dependency graph. The graph according to the resource scheduling relation of the sample from the angle of the malicious code resource call. The method is to use a large number of normal software behavior data and a small amount of tagged malicious code. The normal software resources would be distinguished between differentiated malicious software through the active learning way to update the malicious code classifier. In a small amount of samples of the case, the timely identification of new malicious code. This kind of method mainly describes the features from the aspects of security attribute and statistical feature. However, the expression form of this feature is not comprehensive for the future analysis of malicious code.</p>
+<p>Nataraj and Karthikeyan (2011) first proposed the concept of malicious images. Malicious images from the malicious code executable binary file and the binary file mapping to generate grayscale malicious images. The method uses the same family of malicious code programs that will use some family of historical resource files, resulting in malicious images that are similar. The method requires a small computational cost and a strong anti - jamming capability. However, due to the increasing complexity of malicious code, for malicious code image extraction detection methods, you can also call the obfuscation of resources, etc. to bypass or interfere with the detection of features. Han, Qu, Yao, Guo, and Zhou (2014) and Han, Yao, Wu, and Guo (2014) combined with image analysis technology to extract the fingerprint feature of the image, and use the gray-level co-occurrence matrix algorithm to extract the malicious code texture fingerprint.</p>
+<h2>5. SUMMARY</h2>
+<p>Due to the feature extraction method was broken, the feature database full of obfuscation features and the malware variants escape detection. An new type of malicious code detection model is proposed in this paper. Our feature database is built on n-gram feature extraction method. At the same time, obfuscation features cleaning and feature selection method will eliminate the effects of obfuscation techniques on database. In particular, our method can dynamically determine obfuscation features and adjust the selection of family features. In such a way, the method can ensuring the effectiveness of feature database and improve the accuracy of detect variants.</p>
+<p>When the value of obfuscation features is close to the value of family features, the cleaning method can not remove this kind of obfuscation features effectively. Thus, most of obfuscation features have been cleared by this cleaning method. Moreover, the random forest algorithm will further reduce the influence of remaining obfuscation features. In order to select the features more rationally, this paper proposes a dynamic selection method based on sample set. This method can stabilize the number of features in the database, the features will also change when the number of input samples increases.</p>
+<p>Although the new malicious code detection model proposed in this paper can eliminate most of the obfuscation features, there are still some shortcomings. For example, the speed of operation is too low, the dependency of a large number of mark data is quite strong and so on. On the other hand, the database is very large, it is difficult for model to learn and detect new malware families that do not have a lot of tagged detal. Therefore, how to deal with fewer malicious code families will be launched in the follow-up work. The spark platform has the ability to parallelize the process of data. It is necessary to combine the test model and spark platform together. Considering that our method takes more time for a single sample process, it is need to separate the model detection and the sample feature extraction separately. At the same time, the high real-time requirements of online detection and the need to simultaneously handle multiple sample files.Therefore, the future model combined with the spark platform for the sample set to calculate and feature extraction, and return the eigenvector. Then, the feature vector is calculated by the classifier to improve the response speed of the model. We will also test the performance of the model in more malware sets.</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>Donate comment here</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>Donate</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.jpg" alt="wangyh WeChat Pay"/>
+        <p>WeChat Pay</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.jpg" alt="wangyh Alipay"/>
+        <p>Alipay</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/论文/" rel="tag"># 论文</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/06/05/深入理解-xgboost/" rel="next" title="深入理解 xgboost">
+                <i class="fa fa-chevron-left"></i> 深入理解 xgboost
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/header.jpg"
+                alt="wangyh" />
+            
+              <p class="site-author-name" itemprop="name">wangyh</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives">
+              
+                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-name">categories</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-name">tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/onlywangyh" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:wangyuehan_1993@sina.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">1.</span> <span class="nav-text">A Novel Anti-Obfuscation Model for Detecting Malicious Code</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">1.1.</span> <span class="nav-text">Abstract</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">1.1.1.</span> <span class="nav-text">Keyword：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">1.2.</span> <span class="nav-text">1 Introduction</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">1.3.</span> <span class="nav-text">2. METHODOLOGY</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">1.3.1.</span> <span class="nav-text">2.1. Initial Feature Database Construction</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">1.3.2.</span> <span class="nav-text">2.2. Obfuscation Features Cleaning Method</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">1.4.</span> <span class="nav-text">2.3. Feature Selection Method</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">1.4.1.</span> <span class="nav-text">2.4. Classifier Cluster Construction</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">1.5.</span> <span class="nav-text">3. eXPeRIMeNTAL DATA AND RESULTS ANALYSIS</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">1.5.1.</span> <span class="nav-text">3.1. experimental environment and Test Data</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">1.5.2.</span> <span class="nav-text">3.2. experimental Design</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">1.5.3.</span> <span class="nav-text">3.3. experimental Results and Analysis</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">1.5.3.1.</span> <span class="nav-text">3.3.1. Comparison of Feature Selection Schemes</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">1.5.3.2.</span> <span class="nav-text">3.3.2. Obfuscation Value Cleaning Scheme Comparison</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">1.6.</span> <span class="nav-text">4. RELATED WORK</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">1.6.1.</span> <span class="nav-text">4.1. Detection Technology</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">1.6.2.</span> <span class="nav-text">4.2. Malicious Code Feature extraction</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">1.7.</span> <span class="nav-text">5. SUMMARY</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">wangyh</span>
+
+  
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>访问人数
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>访问总量
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      次
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("28a4oiiKhqW9fxkHvtaUOWlp-gzGzoHsz", "OU7VBDcQqMfVENMauznmmf8w");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
