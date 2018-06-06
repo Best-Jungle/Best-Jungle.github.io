@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="mac," />
 
 
 
@@ -79,19 +79,18 @@
 
 
 
-<meta name="description" content="关于我   本人目前就职于顺丰科技大数据平台部，主要负责分布式、机器学习相关内容。本科就读于延边大学、研究生就读于北京工业大学，研究方向为机器学习、恶意代码检测方向。 已发表论文：A Novel Anti-Obfuscation Model for Detecting Malicious Code">
-<meta property="og:type" content="website">
-<meta property="og:title" content="关于我">
-<meta property="og:url" content="http://yoursite.com/about/index.html">
+<meta name="description" content="最近开始找实习了，很多事情很忙，所以博客很久没更了。在笔试的过程中发现要考 Python，很久以前学过，但是感觉自己基本忘光。所以从头捡起来吧。给大家一个建议，在学生阶段最好要有一条主线任务。像我就是支线剧情打太多，技能🌲都点了，没有太深入的，所以感觉现在找实习的时候就比较黑了。好啦啰嗦的话说完了，下面主要介绍一下 Mac 的配置文件加载，环境变量啊，什么的。Linux 和 Mac 类似，大家可">
+<meta name="keywords" content="mac">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Mac &amp; Linux 配置文件 bash_profile">
+<meta property="og:url" content="http://yoursite.com/2018/06/06/Mac-Linux-配置文件-bash-profile/index.html">
 <meta property="og:site_name" content="长颈鹿先森">
-<meta property="og:description" content="关于我   本人目前就职于顺丰科技大数据平台部，主要负责分布式、机器学习相关内容。本科就读于延边大学、研究生就读于北京工业大学，研究方向为机器学习、恶意代码检测方向。 已发表论文：A Novel Anti-Obfuscation Model for Detecting Malicious Code">
+<meta property="og:description" content="最近开始找实习了，很多事情很忙，所以博客很久没更了。在笔试的过程中发现要考 Python，很久以前学过，但是感觉自己基本忘光。所以从头捡起来吧。给大家一个建议，在学生阶段最好要有一条主线任务。像我就是支线剧情打太多，技能🌲都点了，没有太深入的，所以感觉现在找实习的时候就比较黑了。好啦啰嗦的话说完了，下面主要介绍一下 Mac 的配置文件加载，环境变量啊，什么的。Linux 和 Mac 类似，大家可">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="http://yoursite.com/about/index/%E4%B8%AA%E4%BA%BA%E7%85%A7%E7%89%87.jpg">
-<meta property="og:updated_time" content="2018-06-06T09:47:15.552Z">
+<meta property="og:updated_time" content="2018-06-06T07:11:32.401Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="关于我">
-<meta name="twitter:description" content="关于我   本人目前就职于顺丰科技大数据平台部，主要负责分布式、机器学习相关内容。本科就读于延边大学、研究生就读于北京工业大学，研究方向为机器学习、恶意代码检测方向。 已发表论文：A Novel Anti-Obfuscation Model for Detecting Malicious Code">
-<meta name="twitter:image" content="http://yoursite.com/about/index/%E4%B8%AA%E4%BA%BA%E7%85%A7%E7%89%87.jpg">
+<meta name="twitter:title" content="Mac &amp; Linux 配置文件 bash_profile">
+<meta name="twitter:description" content="最近开始找实习了，很多事情很忙，所以博客很久没更了。在笔试的过程中发现要考 Python，很久以前学过，但是感觉自己基本忘光。所以从头捡起来吧。给大家一个建议，在学生阶段最好要有一条主线任务。像我就是支线剧情打太多，技能🌲都点了，没有太深入的，所以感觉现在找实习的时候就比较黑了。好啦啰嗦的话说完了，下面主要介绍一下 Mac 的配置文件加载，环境变量啊，什么的。Linux 和 Mac 类似，大家可">
 
 
 
@@ -121,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/about/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/06/06/Mac-Linux-配置文件-bash-profile/"/>
 
 
 
 
 
-  <title>关于我 | 长颈鹿先森</title>
+  <title>Mac & Linux 配置文件 bash_profile | 长颈鹿先森</title>
   
 
 
@@ -338,37 +337,256 @@
 
   <div id="posts" class="posts-expand">
     
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/06/Mac-Linux-配置文件-bash-profile/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="wangyh">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/header.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="长颈鹿先森">
+    </span>
+
     
-    
-    <div class="post-block page">
       <header class="post-header">
 
-	<h1 class="post-title" itemprop="name headline">关于我</h1>
-
-
-
-</header>
-
-      
-      
-      
-      <div class="post-body">
         
         
-          <h1>关于我</h1>
-<p><img src="index/%E4%B8%AA%E4%BA%BA%E7%85%A7%E7%89%87.jpg" alt="">
- 本人目前就职于顺丰科技大数据平台部，主要负责分布式、机器学习相关内容。本科就读于延边大学、研究生就读于北京工业大学，研究方向为机器学习、恶意代码检测方向。
-已发表论文：<a href="https://www.researchgate.net/publication/322218297_A_Novel_Anti-Obfuscation_Model_for_Detecting_Malicious_Code" target="_blank" rel="noopener">A Novel Anti-Obfuscation Model for Detecting Malicious Code</a></p>
-
+          <h1 class="post-title" itemprop="name headline">Mac & Linux 配置文件 bash_profile</h1>
         
-      </div>
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-06-06T15:05:21+08:00">
+                2018-06-06
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/linux/" itemprop="url" rel="index">
+                    <span itemprop="name">linux</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2018/06/06/Mac-Linux-配置文件-bash-profile/" class="leancloud_visitors" data-flag-title="Mac & Linux 配置文件 bash_profile">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">Visitors&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>浏览
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>次
+            </span>
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
+                
+                <span title="Words count in article">
+                  662 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Reading time &asymp;</span>
+                
+                <span title="Reading time">
+                  2 分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
       
       
+
+      
+        <p>最近开始找实习了，很多事情很忙，所以博客很久没更了。在笔试的过程中发现要考 Python，很久以前学过，但是感觉自己基本忘光。所以从头捡起来吧。给大家一个建议，在学生阶段最好要有一条主线任务。像我就是支线剧情打太多，技能🌲都点了，没有太深入的，所以感觉现在找实习的时候就比较黑了。好啦啰嗦的话说完了，下面主要介绍一下 Mac 的配置文件加载，环境变量啊，什么的。Linux 和 Mac 类似，大家可以扩展阅读一下，这里就不展开细说了。</p>
+<p>我认为程序员用 Mac 做开发要比用 Windows 本更好一点，因为自带了很多插件，比如 Mac 就安装了 Python，版本是稳定的2.7。但是因为是系统自带的，所以也不允许用户自己修改。我这么爱折腾的人，管他有用没用，我都想改改，有点自己的影子才好。所以安装了新的3.5的版本，但是悲剧的是不管我怎么调，也没有办法改变当前 Python 的编译环境。最后在知乎上有大神给意见，在全局变量里面修改。因此下面介绍一下 Mac 的配置文件加载的问题。</p>
+<hr>
+<p>Mac系统的环境变量，加载顺序为：</p>
+<p><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">/etc<span class="built_in">/profile </span></span><br><span class="line">/etc/paths </span><br><span class="line">~/.bash_profile </span><br><span class="line">~/.bash_login </span><br><span class="line">~/.profile </span><br><span class="line">~/.bashrc</span><br></pre></td></tr></table></figure></p>
+<p>当然/etc/profile和/etc/paths是系统级别的，系统启动就会加载，后面几个是当前用户级的环境变量。后面3个按照从前往后的顺序读取，如果~/.bash_profile文件存在，则后面的几个文件就会被忽略不读了，如果~/.bash_profile文件不存在，才会以此类推读取后面的文件。~/.bashrc没有上述规则，它是bash shell打开的时候载入的。</p>
+<p>全局设置</p>
+<p>下面的几个文件设置是全局的，修改时需要root权限</p>
+<p>1）/etc/paths （全局建议修改这个文件 ）</p>
+<p>编辑 paths，将环境变量添加到 paths文件中 ，一行一个路径</p>
+<p>Hint：输入环境变量时，不用一个一个地输入，只要拖动文件夹到 Terminal 里就可以了。</p>
+<p>2）/etc/profile （建议不修改这个文件 ）</p>
+<p>全局（公有）配置，不管是哪个用户，登录时都会读取该文件。</p>
+<p>3）/etc/bashrc （一般在这个文件中添加系统级环境变量）</p>
+<p>全局（公有）配置，bash shell执行时，不管是何种方式，都会读取此文件。</p>
+
       
     </div>
     
     
     
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>Donate comment here</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>Donate</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.jpg" alt="wangyh WeChat Pay"/>
+        <p>WeChat Pay</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.jpg" alt="wangyh Alipay"/>
+        <p>Alipay</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/mac/" rel="tag"># mac</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/06/06/linux-用户权限划分/" rel="next" title="linux 用户权限划分">
+                <i class="fa fa-chevron-left"></i> linux 用户权限划分
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
   </div>
 
 
@@ -401,17 +619,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            Table of Contents
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            Overview
-          </li>
-        </ul>
-      
 
-      <section class="site-overview-wrap sidebar-panel">
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -491,22 +700,6 @@
         </div>
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">1.</span> <span class="nav-text">关于我</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       
