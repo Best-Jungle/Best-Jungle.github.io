@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="长颈鹿先森">
 <meta property="og:description" content="本博客选用了 hexo 中 Next主题。在 Next 主题中，采用了font awesome 字体库。 相关的对照表，如font awesome所示。 在博客中设置分类和标签是非常重要的操作。 首先新建一个 tags 页面 12$ cd your-hexo-site$ hexo new page tags 进入刚刚生成的页面，一般为 index 文件，修改 type 类型为tags 即可。如下：">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-06-06T06:30:05.108Z">
+<meta property="og:updated_time" content="2018-06-06T06:36:44.020Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="hexo 博客配置">
 <meta name="twitter:description" content="本博客选用了 hexo 中 Next主题。在 Next 主题中，采用了font awesome 字体库。 相关的对照表，如font awesome所示。 在博客中设置分类和标签是非常重要的操作。 首先新建一个 tags 页面 12$ cd your-hexo-site$ hexo new page tags 进入刚刚生成的页面，一般为 index 文件，修改 type 类型为tags 即可。如下：">
@@ -219,6 +219,16 @@
               <i class="menu-item-icon fa fa-fw fa-user-secret"></i> <br />
             
             机器学习
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-linux">
+          <a href="/categories/linux" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-file"></i> <br />
+            
+            linux
           </a>
         </li>
       
@@ -438,7 +448,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  323 字
+                  395 字
                 </span>
               
 
@@ -454,7 +464,7 @@
                   <span class="post-meta-item-text">Reading time &asymp;</span>
                 
                 <span title="Reading time">
-                  1 分钟
+                  2 分钟
                 </span>
               
             </div>
@@ -485,6 +495,8 @@
 <p>对于分类 categories 同理，只需要将 type 类型改为 categories 即可。但是需要注意一点，对于 tags 没有层级区分。而 categories 则有着严格的先后级关系。</p>
 <p>可以修改  /scaffolds/post.md 模板，加入 tags、 categories 的标签。如下：</p>
 <p><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">---</span></span><br><span class="line"><span class="attr">title:</span> <span class="string">&#123;&#123;</span> <span class="string">title</span> <span class="string">&#125;&#125;</span></span><br><span class="line"><span class="attr">date:</span> <span class="string">&#123;&#123;</span> <span class="string">date</span> <span class="string">&#125;&#125;</span></span><br><span class="line"><span class="attr">tags:</span></span><br><span class="line"><span class="attr">categories:</span></span><br><span class="line"><span class="meta">---</span></span><br></pre></td></tr></table></figure></p>
+<p>在 hexo 中设置首页单页文章数目：</p>
+<p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">在站点配置文件中，修改 per_page 的数目</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> Home page setting</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> path: Root path <span class="keyword">for</span> your blogs index page. (default = <span class="string">''</span>)</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> per_page: Posts displayed per page. (0 = <span class="built_in">disable</span> pagination)</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> order_by: Posts order. (Order by date descending by default)</span></span><br><span class="line">index_generator:</span><br><span class="line">  path: ''</span><br><span class="line">  per_page: 5</span><br><span class="line">  order_by: -date</span><br></pre></td></tr></table></figure></p>
 <p>在 hexo 中开启搜索选项方法</p>
 <p>1）首先安装插件</p>
 <p><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">在站点的根目录下执行以下命令：</span><br><span class="line"></span><br><span class="line">npm <span class="keyword">install</span> hexo-generator-<span class="keyword">search</span> <span class="comment">--save</span></span><br><span class="line"></span><br><span class="line">npm <span class="keyword">install</span> hexo-generator-searchdb <span class="comment">--save</span></span><br></pre></td></tr></table></figure></p>
@@ -636,7 +648,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-count">10</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -647,7 +659,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">categories</span>
                 </a>
               </div>
@@ -658,7 +670,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
