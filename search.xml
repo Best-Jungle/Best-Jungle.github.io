@@ -58,7 +58,7 @@
   <entry>
     <title><![CDATA[hexo 博客配置]]></title>
     <url>%2F2018%2F06%2F04%2Fhexo%E5%8D%9A%E5%AE%A2%E9%85%8D%E7%BD%AE%2F</url>
-    <content type="text"><![CDATA[本博客选用了 hexo 中 Next主题。在 Next 主题中，采用了font awesome 字体库。 相关的对照表，如font awesome所示。 在博客中设置分类和标签是非常重要的操作。 首先新建一个 tags 页面 12$ cd your-hexo-site$ hexo new page tags 进入刚刚生成的页面，一般为 index 文件，修改 type 类型为tags 即可。如下： 1234title: 标签date: 2014-12-22 12:39:04type: "tags"--- 对于分类 categories 同理，只需要将 type 类型改为 categories 即可。但是需要注意一点，对于 tags 没有层级区分。而 categories 则有着严格的先后级关系。 可以修改 /scaffolds/post.md 模板，加入 tags、 categories 的标签。如下： 123456---title: &#123;&#123; title &#125;&#125;date: &#123;&#123; date &#125;&#125;tags:categories:---]]></content>
+    <content type="text"><![CDATA[本博客选用了 hexo 中 Next主题。在 Next 主题中，采用了font awesome 字体库。 相关的对照表，如font awesome所示。 在博客中设置分类和标签是非常重要的操作。 首先新建一个 tags 页面 12$ cd your-hexo-site$ hexo new page tags 进入刚刚生成的页面，一般为 index 文件，修改 type 类型为tags 即可。如下： 1234title: 标签date: 2014-12-22 12:39:04type: "tags"--- 对于分类 categories 同理，只需要将 type 类型改为 categories 即可。但是需要注意一点，对于 tags 没有层级区分。而 categories 则有着严格的先后级关系。 可以修改 /scaffolds/post.md 模板，加入 tags、 categories 的标签。如下： 123456---title: &#123;&#123; title &#125;&#125;date: &#123;&#123; date &#125;&#125;tags:categories:--- 在 hexo 中开启搜索选项，]]></content>
       <categories>
         <category>blog</category>
       </categories>
