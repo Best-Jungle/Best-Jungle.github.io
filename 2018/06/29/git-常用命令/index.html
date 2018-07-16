@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="长颈鹿先森">
 <meta property="og:description" content="常用的 Git 命令 最近步入公司，开始经常使用 git 。相比于原来 git 的使用，会更复杂更多一点。现在记录几条常用的git命令，作为备份信息。 1） 查看用户名和邮箱地址： 12$ git config user.name$ git config user.email 2）修改用户名和邮箱地址： 123$ git config --global user.name &quot;username&quot;$">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-06-29T10:21:07.391Z">
+<meta property="og:updated_time" content="2018-07-16T17:36:37.903Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="git 常用命令">
 <meta name="twitter:description" content="常用的 Git 命令 最近步入公司，开始经常使用 git 。相比于原来 git 的使用，会更复杂更多一点。现在记录几条常用的git命令，作为备份信息。 1） 查看用户名和邮箱地址： 12$ git config user.name$ git config user.email 2）修改用户名和邮箱地址： 123$ git config --global user.name &quot;username&quot;$">
@@ -438,7 +438,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  172 字
+                  849 字
                 </span>
               
 
@@ -454,7 +454,7 @@
                   <span class="post-meta-item-text">Reading time &asymp;</span>
                 
                 <span title="Reading time">
-                  1 分钟
+                  3 分钟
                 </span>
               
             </div>
@@ -487,6 +487,45 @@
 <p><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git config user<span class="selector-class">.name</span> <span class="string">'wangz'</span>  </span><br><span class="line">git config user<span class="selector-class">.email</span> <span class="string">'wangz@alib.com'</span>  </span><br><span class="line">git commit  --amend --author=wangz</span><br></pre></td></tr></table></figure></p>
 <p>5）查看提交记录，根据 commit id 查看提交情况。</p>
 <p><figure class="highlight gauss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">log</span></span><br><span class="line">git <span class="keyword">show</span></span><br></pre></td></tr></table></figure></p>
+<p>一些基础git操作命令：
+<figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git status 命令用来查看 <span class="comment">--short(输出信息更紧凑)</span></span><br><span class="line">git diff 命令用来查看尚未暂存的改动 <span class="comment">--cached</span></span><br><span class="line">git commit -<span class="keyword">a</span> -m 可以不用提前 <span class="built_in">add</span> 操作，自动将追踪文件提交（一般来说，是之前提交过的已存在文件）,并加入提交日志。</span><br></pre></td></tr></table></figure></p>
+<p><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git log 查看提交历史。(-<span class="selector-tag">p</span> 是一个常用选项，例如 -<span class="selector-tag">p</span> -<span class="number">2</span> ,仅显示最近两次提交。--stat 查看每次提交的简略的统计信息)</span><br></pre></td></tr></table></figure></p>
+<p>Git 基础 - 撤消操作：</p>
+<p><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">git <span class="keyword">reset</span> <span class="keyword">HEAD</span> &lt;<span class="keyword">file</span>&gt;</span><br><span class="line">这个命令会修改暂存区</span><br><span class="line"></span><br><span class="line">git checkout <span class="comment">-- &lt;file&gt;</span></span><br><span class="line">这个命令会将文件的修改丢弃</span><br></pre></td></tr></table></figure></p>
+<p>这里重点分析一下 reset 和 checkout 命令。
+在讲解这两个命令之前，先看下git中树的概念。git中一共有3棵树分别来管理我们的项目，这里的树不是一种数据结构，可以理解为一种文件的集合。</p>
+<table>
+<thead>
+<tr>
+<th>树🌲</th>
+<th>用途</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>HEAD</td>
+<td>上一次提交的快照，下一次提交的父结点</td>
+</tr>
+<tr>
+<td>Index</td>
+<td>预期的下一次提交的快照</td>
+</tr>
+<tr>
+<td>Working Directory</td>
+<td>沙盒</td>
+</tr>
+</tbody>
+</table>
+<h5>HEAD</h5>
+<p>HEAD 是当前分支引用的指针，它总是指向该分支上的最后一次提交。 这表示 HEAD 将是下一次提交的父结点。 通常，理解 HEAD 的最简方式，就是将它看做你的上一次提交的快照。</p>
+<h5>Index</h5>
+<p>Index 中保存的是暂存区，通过add可以将数据添加进Index。 commit 则会将 Index 中的数据提交到HEAD中。</p>
+<h5>Working Directory</h5>
+<p>Working Directory 中则是当前的工作目录。</p>
+<p>接下来谈一下如何利用 reset 强制覆盖我们当前的工作目录。这样主要是用于处理当冲突太多时，避免大量的修改工作。</p>
+<p>首先我们要用到的命令是git fetch [remote-name]。这个命令会访问远程仓库，从中拉取所有你还没有的数据。 执行完成后，你将会拥有那个远程仓库中所有分支的引用，可以随时合并或查看。</p>
+<p>如果你使用 clone 命令克隆了一个仓库，命令会自动将其添加为远程仓库并默认以 “origin” 为简写。 所以，git fetch origin 会抓取克隆（或上一次抓取）后新推送的所有工作。 必须注意 git fetch 命令会将数据拉取到你的本地仓库 - 它并不会自动合并或修改你当前的工作。 当准备好时你必须手动将其合并入你的工作。</p>
+<p>因此我们使用git fetch origin 从远端抓取了最新的代码以后，可以利用 git reset 重新指定HEAD的位置。</p>
 
       
     </div>
@@ -706,7 +745,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">1.</span> <span class="nav-text">常用的 Git 命令</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">1.</span> <span class="nav-text">常用的 Git 命令</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#undefined"><span class="nav-number">1.0.0.1.</span> <span class="nav-text">HEAD</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#undefined"><span class="nav-number">1.0.0.2.</span> <span class="nav-text">Index</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#undefined"><span class="nav-number">1.0.0.3.</span> <span class="nav-text">Working Directory</span></a></li></ol></li></ol></li></ol></li></ol></div>
             
 
           </div>
