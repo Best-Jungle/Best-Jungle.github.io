@@ -1,0 +1,1403 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Mac," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="快速提高工作效率-Mac自动化脚本  工作以后，事情非常多，如何更好的管理自己的工作是非常重要的。 本文介绍了如何利用Mac中自动化脚本，快速提高自己的工作效率。  定时任务  作为一名刚刚进入公司的应届毕业生，工作量相比学生时代呈几何增长。为了规划自己每天的工作任务，建立每日的工作日志是非常重要的。然后人工的建立每日工作目录，有点太慢了。因此开始考虑如何利用Mac中的自动化脚本帮助自己定时的生成">
+<meta name="keywords" content="Mac">
+<meta property="og:type" content="article">
+<meta property="og:title" content="快速提高工作效率-Mac自动化脚本">
+<meta property="og:url" content="http://yoursite.com/2018/09/02/快速提高工作效率-Mac自动化脚本/index.html">
+<meta property="og:site_name" content="长颈鹿先森">
+<meta property="og:description" content="快速提高工作效率-Mac自动化脚本  工作以后，事情非常多，如何更好的管理自己的工作是非常重要的。 本文介绍了如何利用Mac中自动化脚本，快速提高自己的工作效率。  定时任务  作为一名刚刚进入公司的应届毕业生，工作量相比学生时代呈几何增长。为了规划自己每天的工作任务，建立每日的工作日志是非常重要的。然后人工的建立每日工作目录，有点太慢了。因此开始考虑如何利用Mac中的自动化脚本帮助自己定时的生成">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="http://yoursite.com/2018/09/02/快速提高工作效率-Mac自动化脚本/media/15359005499895.jpg">
+<meta property="og:image" content="http://yoursite.com/2018/09/02/快速提高工作效率-Mac自动化脚本/media/15359015075249.jpg">
+<meta property="og:updated_time" content="2018-09-02T16:09:39.115Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="快速提高工作效率-Mac自动化脚本">
+<meta name="twitter:description" content="快速提高工作效率-Mac自动化脚本  工作以后，事情非常多，如何更好的管理自己的工作是非常重要的。 本文介绍了如何利用Mac中自动化脚本，快速提高自己的工作效率。  定时任务  作为一名刚刚进入公司的应届毕业生，工作量相比学生时代呈几何增长。为了规划自己每天的工作任务，建立每日的工作日志是非常重要的。然后人工的建立每日工作目录，有点太慢了。因此开始考虑如何利用Mac中的自动化脚本帮助自己定时的生成">
+<meta name="twitter:image" content="http://yoursite.com/2018/09/02/快速提高工作效率-Mac自动化脚本/media/15359005499895.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":5},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the 搜索: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/09/02/快速提高工作效率-Mac自动化脚本/"/>
+
+
+
+
+
+  <title>快速提高工作效率-Mac自动化脚本 | 长颈鹿先森</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="default">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <a href="https://github.com/onlywangyh" class="github-corner" aria-label="View source on Github"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">长颈鹿先森</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">长颈鹿先森的个人博客</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-首页">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-博客搭建">
+          <a href="/categories/blog" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            博客搭建
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-区块链">
+          <a href="/categories/区块链" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-american-sign-language-interpreting"></i> <br />
+            
+            区块链
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-大数据&分布式">
+          <a href="/categories/大数据-分布式" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-institution"></i> <br />
+            
+            大数据&分布式
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-机器学习">
+          <a href="/categories/机器学习" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user-secret"></i> <br />
+            
+            机器学习
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-linux">
+          <a href="/categories/linux" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-file"></i> <br />
+            
+            linux
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-个人成果&杂记">
+          <a href="/categories/个人成果-杂记" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-gift"></i> <br />
+            
+            个人成果&杂记
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-关于我">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于我
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            Search
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="Searching..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/02/快速提高工作效率-Mac自动化脚本/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="wangyh">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/header.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="长颈鹿先森">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">快速提高工作效率-Mac自动化脚本</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-09-02T14:20:31+08:00">
+                2018-09-02
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/linux/" itemprop="url" rel="index">
+                    <span itemprop="name">linux</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2018/09/02/快速提高工作效率-Mac自动化脚本/" class="leancloud_visitors" data-flag-title="快速提高工作效率-Mac自动化脚本">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">Visitors&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>浏览
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>次
+            </span>
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
+                
+                <span title="Words count in article">
+                  3,177 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Reading time &asymp;</span>
+                
+                <span title="Reading time">
+                  14 分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1>快速提高工作效率-Mac自动化脚本</h1>
+<blockquote>
+<p>工作以后，事情非常多，如何更好的管理自己的工作是非常重要的。</p>
+<p>本文介绍了如何利用Mac中自动化脚本，快速提高自己的工作效率。</p>
+</blockquote>
+<h3>定时任务</h3>
+<hr>
+<p>作为一名刚刚进入公司的应届毕业生，工作量相比学生时代呈几何增长。为了规划自己每天的工作任务，建立每日的工作日志是非常重要的。然后人工的建立每日工作目录，有点太慢了。因此开始考虑如何利用Mac中的自动化脚本帮助自己定时的生成每日工作日志。</p>
+<p>除此之外，在公司还会面临每日的订餐、打卡、周报等重复性的工作。工作忙时，经常会忘记这些基础类的工作。因此为了防止自己错过美食时间，我也在我的Mac中加入了定时的弹窗提醒。</p>
+<h3>定制化脚本</h3>
+<hr>
+<p>在Mac中其实有两种定制化脚本的方法。第一种是苹果推荐的<a href="https://support.apple.com/zh-cn/guide/terminal/trml1003/mac" target="_blank" rel="noopener">AppleScript</a>。第二种则可以使用Shell脚本来执行一些任务。其实如果对AppleScript了解深入的话，我个人更推荐使用AppleScript来执行一些任务。</p>
+<p><strong>AppleScript</strong></p>
+<p>AppleScript 脚本执行需要使用 osascript 命令。有关 osascript 命令的具体使用可以参见 <a href="x-man-page://osascript" target="_blank" rel="noopener">osascript man 页面</a>。</p>
+<p>下面简单的展示了一条osascript:</p>
+<p><code>osascript -e 'display notification &quot;通知内容&quot; with title &quot;标题&quot; subtitle &quot;子标题&quot;'</code></p>
+<p>这条指令调用了通知栏，会弹出一条通知消息。如下图所示
+<img src="media/15359005499895.jpg" alt="-w1053"></p>
+<p>很多时候我们更需要弹窗的方式，提醒我们一些必须做的时间。比如到点了，我希望系统能提醒我订餐，防止我错过订餐时间。这时候就可以采用 AppleScript 脚本，来执行一些更为复杂的命令。</p>
+<p><figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">on</span> callmeican()</span><br><span class="line">    <span class="keyword">set</span> meican_url <span class="keyword">to</span> <span class="string">"http://waimai.meituan.com/?utm_campaign=baidu&amp;utm_source=1522"</span> <span class="keyword">as</span> <span class="built_in">string</span></span><br><span class="line">    <span class="keyword">tell</span> <span class="built_in">application</span> <span class="string">"Google Chrome"</span></span><br><span class="line">        open location meican_url</span><br><span class="line">        <span class="built_in">activate</span></span><br><span class="line">    <span class="keyword">end</span> <span class="keyword">tell</span></span><br><span class="line"><span class="keyword">end</span> callmeican</span><br><span class="line"></span><br><span class="line"><span class="built_in">say</span> <span class="string">"不要这么拼了，预订美餐时间到了"</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">display dialog</span> <span class="string">"订餐时间截至时间16:30！"</span> buttons &#123;<span class="string">"好的"</span>, <span class="string">"我不定了"</span>&#125; default button <span class="number">1</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> <span class="keyword">the</span> button returned <span class="keyword">of</span> <span class="keyword">the</span> <span class="literal">result</span> <span class="keyword">is</span> <span class="string">"好的"</span> <span class="keyword">then</span></span><br><span class="line">    <span class="comment">-- action for 1st button goes here</span></span><br><span class="line">    callmeican()</span><br></pre></td></tr></table></figure></p>
+<p>这条脚本会调用弹框，如果点击了确定会通过chrome帮我打开订餐网站。效果如下
+<img src="media/15359015075249.jpg" alt="-w420"></p>
+<p>一般来说，对于一些每天必须要做的事情，可以通过弹窗的方式。快速打开网页，快速完成工作。</p>
+<p>其实除了Mac上自带的 AppleScript 脚本，我们也可以基于Unix的Shell脚本编写一些自动化脚本。比如生成每日的工作目录。</p>
+<p><strong>Shell脚本</strong></p>
+<p>工作以后，每天的工作都很杂。因此管理每日工作日志变得非常重要。对于每日生成日志这样重复性的工作，我尝试通过Shell脚本帮助我生成日志。</p>
+<p>每日工作日志分为三个脚本，一个是每天生成的，还有一个则为每周生成，最后则为每月生成。</p>
+<p>下面是我每日生成工作日志的脚本 task_Day.sh</p>
+<p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/sh</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">#先设置语言为中文</span></span><br><span class="line"><span class="built_in">export</span> LANG=<span class="string">"zh_CN"</span></span><br><span class="line"><span class="comment">#二</span></span><br><span class="line">data_today=`date +%a`</span><br><span class="line"><span class="comment">#2</span></span><br><span class="line">week_day=`date +%w`</span><br><span class="line"></span><br><span class="line"><span class="comment">#判断是否为周日</span></span><br><span class="line"><span class="keyword">if</span> [[ <span class="variable">$week_day</span> -eq 0 ]]; <span class="keyword">then</span></span><br><span class="line">	<span class="comment">#statements</span></span><br><span class="line">	week_day=7</span><br><span class="line"><span class="keyword">fi</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> [[ <span class="variable">$week_day</span> -eq 1 ]]; <span class="keyword">then</span></span><br><span class="line">	<span class="comment">#statements</span></span><br><span class="line">	`/Users/xxx/Desktop/Code/Shell/Task/task_Weekday.sh`</span><br><span class="line"><span class="keyword">fi</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#2018.08.28</span></span><br><span class="line">data_info=`date +%Y.%m.%d`</span><br><span class="line"><span class="comment">#28</span></span><br><span class="line">data_daka=`date +%d`</span><br><span class="line">data_shenyu=`expr 25 - <span class="variable">$data_daka</span>`</span><br><span class="line"><span class="comment">#普通文件</span></span><br><span class="line"><span class="comment"># kaitou="今天是"$&#123;data_info&#125;。"\n\n每天都有一个好心情，加油！\n\n今天的主要任务是："</span></span><br><span class="line"><span class="comment">#markdown开头</span></span><br><span class="line">kaitou=<span class="string">"&gt;今天是"</span><span class="variable">$&#123;data_info&#125;</span><span class="string">"\n&gt;**数据备份了么！系统更新记得重新备份！！！**\n&gt;今天打卡了么！离25号还有"</span><span class="variable">$&#123;data_shenyu&#125;</span>天<span class="string">",[赶紧填工时！](http://itmp.sf-express.com/loginmgmt/frame.action?name=timemgmt&amp;frameSize=1)\n&gt;加油！你是最胖的！\n\n##今天的主要任务是：\n\n* [x] \n\n* [ ]"</span></span><br><span class="line"></span><br><span class="line"> </span><br><span class="line"></span><br><span class="line"><span class="comment">#计算当前周日期 1</span></span><br><span class="line">to_monday=`expr <span class="variable">$week_day</span> - 1`</span><br><span class="line">to_sunday=`expr 7 - <span class="variable">$week_day</span>`</span><br><span class="line"></span><br><span class="line">monday=`/bin/date -v -<span class="variable">$&#123;to_monday&#125;</span>d +%d`</span><br><span class="line">sunday=`/bin/date -v +<span class="variable">$&#123;to_sunday&#125;</span>d +%d`</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">#计算月份、以周一的月份为准</span></span><br><span class="line">Month=`/bin/date -v -<span class="variable">$&#123;to_monday&#125;</span>d +%Y年%m月`</span><br><span class="line">Time=`date`</span><br><span class="line">folder_name=<span class="variable">$&#123;monday&#125;</span><span class="string">"-"</span><span class="variable">$sunday</span></span><br><span class="line">Data_name=`date +%A`</span><br><span class="line"></span><br><span class="line"><span class="comment">#判断是否是周末</span></span><br><span class="line"><span class="keyword">if</span> [[ <span class="variable">$week_day</span> -lt 6 ]]; <span class="keyword">then</span></span><br><span class="line"></span><br><span class="line">	<span class="comment">#进入工作目录</span></span><br><span class="line">	<span class="built_in">cd</span> /Users/xxx/Desktop/SF-Resource/工作日志/<span class="variable">$Month</span>/<span class="variable">$folder_name</span> </span><br><span class="line">	mkdir <span class="variable">$Data_name</span></span><br><span class="line">	<span class="built_in">echo</span> <span class="string">'今天是'</span><span class="variable">$&#123;Data_name&#125;</span><span class="string">'已经创建了当天的工作目录-'</span><span class="variable">$Data_name</span><span class="string">'---创建时间是：'</span><span class="variable">$Time</span> &gt;&gt; /Users/xxx/Desktop/Code/Shell/Log/task_Day.log</span><br><span class="line">	<span class="comment">#进入当天工作目录</span></span><br><span class="line">	<span class="built_in">cd</span> /Users/xxx/Desktop/SF-Resource/工作日志/<span class="variable">$Month</span>/<span class="variable">$folder_name</span>/<span class="variable">$Data_name</span></span><br><span class="line">	<span class="comment">#普通文件</span></span><br><span class="line">	<span class="comment">#touch $&#123;data_info&#125;"-工作日志"</span></span><br><span class="line">	<span class="comment">#echo $kaitou &gt;&gt; $&#123;data_info&#125;"-工作日志"</span></span><br><span class="line"></span><br><span class="line">	<span class="comment">#markdown</span></span><br><span class="line">	touch <span class="variable">$&#123;data_info&#125;</span><span class="string">"-工作日志.md"</span>	</span><br><span class="line">	<span class="built_in">echo</span> <span class="variable">$kaitou</span> &gt;&gt; <span class="variable">$&#123;data_info&#125;</span><span class="string">"-工作日志.md"</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">	<span class="built_in">echo</span> <span class="string">'今天是'</span><span class="variable">$&#123;data_info&#125;</span><span class="string">'。好好休息！~~~~下周继续加班呦'</span><span class="variable">$Time</span> &gt;&gt; /Users/xxx/Desktop/Code/Shell/Log/task_Day.log</span><br><span class="line"><span class="keyword">fi</span></span><br></pre></td></tr></table></figure></p>
+<p>task_Weekday.sh</p>
+<p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/sh</span></span><br><span class="line"><span class="comment">#获取一周日期date -v +4d +%Y-%m-%d</span></span><br><span class="line"><span class="built_in">export</span> LANG=<span class="string">"zh_CN"</span></span><br><span class="line"></span><br><span class="line">week_day=`date +%w`</span><br><span class="line">to_monday=`expr <span class="variable">$week_day</span> - 1`</span><br><span class="line">to_sunday=`expr 7 - <span class="variable">$week_day</span>`</span><br><span class="line"></span><br><span class="line">monday=`/bin/date -v -<span class="variable">$&#123;to_monday&#125;</span>d +%d`</span><br><span class="line">sunday=`/bin/date -v +<span class="variable">$&#123;to_sunday&#125;</span>d +%d`</span><br><span class="line"></span><br><span class="line">Month=`date +%Y年%m月`</span><br><span class="line">Year=`date +%Y年`</span><br><span class="line">Week=`date +%W周`</span><br><span class="line">Time=`date`</span><br><span class="line">folder_name=<span class="variable">$&#123;monday&#125;</span><span class="string">"-"</span><span class="variable">$sunday</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#工作总结撰写</span></span><br><span class="line">zhoubaotime_today=`date +%Y.%m.%d`</span><br><span class="line">zhoubaotime_five=`date -d <span class="string">'friday'</span> +%Y.%m.%d`</span><br><span class="line"></span><br><span class="line">zhoubaoname=<span class="string">"("</span><span class="variable">$&#123;zhoubaotime_today&#125;</span><span class="string">"~"</span><span class="variable">$zhoubaotime_five</span><span class="string">")工作周报"</span></span><br><span class="line">zhoubaomd=<span class="variable">$zhoubaoname</span><span class="string">'.md'</span></span><br><span class="line">mk_kaitou=<span class="string">"&gt;"</span><span class="variable">$zhoubaoname</span><span class="string">"\n\n&gt;"</span><span class="variable">$Year</span><span class="string">"共有52周\n本周是第"</span><span class="variable">$Week</span><span class="string">"\n\n##本周的主要工作为： \n\n* \n\n* \n\n-------\n\n*以下为每天的工作内容*\n\n####周一\n* [ ] \n* [ ]\n\n####周二\n* [ ] \n* [ ] \n\n####周三\n* [ ] \n* [ ]\n\n####周四\n* [ ] \n* [ ]\n\n####周五\n* [ ] \n* [ ]"</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># zhoubaoname="("$&#123;zhoubaotime_today&#125;"~"$zhoubaotime_five")工作周报"</span></span><br><span class="line"><span class="comment"># kaitou=$zhoubaoname"\n\n"$Year"共有52周，本周是第"$Week"。\n\n本周的主要工作为：\n\n以下为每天的工作内容：\n\n周一：\n\n周二：\n\n周三：\n\n周四：\n\n周五："</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="built_in">cd</span> /Users/xxx/Desktop/SF-Resource/工作日志/ &amp;&amp;</span><br><span class="line"><span class="comment">#创建工作日志文档（判断 月份）</span></span><br><span class="line"><span class="keyword">if</span> [ ! -d <span class="variable">$Month</span> ];<span class="keyword">then</span></span><br><span class="line">	`/Users/xxx/Desktop/Code/Shell/Task/task_Month.sh`</span><br><span class="line"><span class="comment">#运行完成写入日志</span></span><br><span class="line">	<span class="built_in">echo</span> <span class="string">'成功创建了文件夹'</span><span class="variable">$Month</span> &gt;&gt; /Users/xxx/Desktop/Code/Shell/Log/task_Month.log</span><br><span class="line"><span class="keyword">fi</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">cd</span> /Users/xxx/Desktop/SF-Resource/工作日志/<span class="variable">$Month</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#本周文档创建</span></span><br><span class="line"><span class="keyword">if</span> [[ ! -d <span class="variable">$folder_name</span> ]]; <span class="keyword">then</span></span><br><span class="line">	mkdir <span class="variable">$folder_name</span></span><br><span class="line">	<span class="built_in">echo</span> <span class="string">'成功创建了文件夹--'</span><span class="variable">$folder_name</span> <span class="string">'---创建时间是：'</span><span class="variable">$Time</span> &gt;&gt; /Users/xxx/Desktop/Code/Shell/Log/task_Weekday.log</span><br><span class="line">	<span class="built_in">cd</span> /Users/xxx/Desktop/SF-Resource/工作日志/<span class="variable">$Month</span>/<span class="variable">$folder_name</span> &amp;&amp;</span><br><span class="line">	touch <span class="variable">$zhoubaomd</span>  &amp;&amp; <span class="built_in">echo</span>  <span class="variable">$mk_kaitou</span> &gt;&gt; <span class="variable">$zhoubaomd</span></span><br><span class="line">	<span class="built_in">echo</span> <span class="string">'成功创建了周报'</span><span class="variable">$zhoubaomd</span> <span class="string">'---创建时间是：'</span><span class="variable">$Time</span> &gt;&gt; /Users/xxx/Desktop/Code/Shell/Log/task_Weekday.log</span><br><span class="line"></span><br><span class="line"><span class="keyword">else</span></span><br><span class="line"><span class="comment">#输出错误日志</span></span><br><span class="line">	<span class="built_in">echo</span> <span class="variable">$folder_name</span><span class="string">"文件夹已经存在，创建失败"</span><span class="variable">$Time</span> &gt;&gt; /Users/xxx/Desktop/Code/Shell/Log/task_Weekday.log</span><br><span class="line"></span><br><span class="line"><span class="keyword">fi</span></span><br></pre></td></tr></table></figure></p>
+<p>task_Month.sh</p>
+<p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/sh</span></span><br><span class="line"><span class="comment">#获取一周日期date -v +4d +%Y-%m-%d</span></span><br><span class="line"><span class="built_in">export</span> LANG=<span class="string">"zh_CN"</span></span><br><span class="line"></span><br><span class="line">week_day=`date +%w`</span><br><span class="line">to_monday=`expr <span class="variable">$week_day</span> - 1`</span><br><span class="line">to_sunday=`expr 7 - <span class="variable">$week_day</span>`</span><br><span class="line"></span><br><span class="line">monday=`/bin/date -v -<span class="variable">$&#123;to_monday&#125;</span>d +%d`</span><br><span class="line">sunday=`/bin/date -v +<span class="variable">$&#123;to_sunday&#125;</span>d +%d`</span><br><span class="line"></span><br><span class="line">Month=`date +%Y年%m月`</span><br><span class="line">Year=`date +%Y年`</span><br><span class="line">Week=`date +%W周`</span><br><span class="line">Time=`date`</span><br><span class="line">folder_name=<span class="variable">$&#123;monday&#125;</span><span class="string">"-"</span><span class="variable">$sunday</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#工作总结撰写</span></span><br><span class="line">zhoubaotime_today=`date +%Y.%m.%d`</span><br><span class="line">zhoubaotime_five=`date -d <span class="string">'friday'</span> +%Y.%m.%d`</span><br><span class="line"></span><br><span class="line">zhoubaoname=<span class="string">"("</span><span class="variable">$&#123;zhoubaotime_today&#125;</span><span class="string">"~"</span><span class="variable">$zhoubaotime_five</span><span class="string">")工作周报"</span></span><br><span class="line">zhoubaomd=<span class="variable">$zhoubaoname</span><span class="string">'.md'</span></span><br><span class="line">mk_kaitou=<span class="string">"&gt;"</span><span class="variable">$zhoubaoname</span><span class="string">"\n\n&gt;"</span><span class="variable">$Year</span><span class="string">"共有52周\n本周是第"</span><span class="variable">$Week</span><span class="string">"\n\n##本周的主要工作为： \n\n* \n\n* \n\n-------\n\n*以下为每天的工作内容*\n\n####周一\n* [ ] \n* [ ]\n\n####周二\n* [ ] \n* [ ] \n\n####周三\n* [ ] \n* [ ]\n\n####周四\n* [ ] \n* [ ]\n\n####周五\n* [ ] \n* [ ]"</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># zhoubaoname="("$&#123;zhoubaotime_today&#125;"~"$zhoubaotime_five")工作周报"</span></span><br><span class="line"><span class="comment"># kaitou=$zhoubaoname"\n\n"$Year"共有52周，本周是第"$Week"。\n\n本周的主要工作为：\n\n以下为每天的工作内容：\n\n周一：\n\n周二：\n\n周三：\n\n周四：\n\n周五："</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="built_in">cd</span> /Users/xxx/Desktop/SF-Resource/工作日志/ &amp;&amp;</span><br><span class="line"><span class="comment">#创建工作日志文档（判断 月份）</span></span><br><span class="line"><span class="keyword">if</span> [ ! -d <span class="variable">$Month</span> ];<span class="keyword">then</span></span><br><span class="line">	`/Users/xxx/Desktop/Code/Shell/Task/task_Month.sh`</span><br><span class="line"><span class="comment">#运行完成写入日志</span></span><br><span class="line">	<span class="built_in">echo</span> <span class="string">'成功创建了文件夹'</span><span class="variable">$Month</span> &gt;&gt; /Users/xxx/Desktop/Code/Shell/Log/task_Month.log</span><br><span class="line"><span class="keyword">fi</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">cd</span> /Users/xxx/Desktop/SF-Resource/工作日志/<span class="variable">$Month</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#本周文档创建</span></span><br><span class="line"><span class="keyword">if</span> [[ ! -d <span class="variable">$folder_name</span> ]]; <span class="keyword">then</span></span><br><span class="line">	mkdir <span class="variable">$folder_name</span></span><br><span class="line">	<span class="built_in">echo</span> <span class="string">'成功创建了文件夹--'</span><span class="variable">$folder_name</span> <span class="string">'---创建时间是：'</span><span class="variable">$Time</span> &gt;&gt; /Users/xxx/Desktop/Code/Shell/Log/task_Weekday.log</span><br><span class="line">	<span class="built_in">cd</span> /Users/xxx/Desktop/SF-Resource/工作日志/<span class="variable">$Month</span>/<span class="variable">$folder_name</span> &amp;&amp;</span><br><span class="line">	touch <span class="variable">$zhoubaomd</span>  &amp;&amp; <span class="built_in">echo</span>  <span class="variable">$mk_kaitou</span> &gt;&gt; <span class="variable">$zhoubaomd</span></span><br><span class="line">	<span class="built_in">echo</span> <span class="string">'成功创建了周报'</span><span class="variable">$zhoubaomd</span> <span class="string">'---创建时间是：'</span><span class="variable">$Time</span> &gt;&gt; /Users/xxx/Desktop/Code/Shell/Log/task_Weekday.log</span><br><span class="line"></span><br><span class="line"><span class="keyword">else</span></span><br><span class="line"><span class="comment">#输出错误日志</span></span><br><span class="line">	<span class="built_in">echo</span> <span class="variable">$folder_name</span><span class="string">"文件夹已经存在，创建失败"</span><span class="variable">$Time</span> &gt;&gt; /Users/xxx/Desktop/Code/Shell/Log/task_Weekday.log</span><br><span class="line"></span><br><span class="line"><span class="keyword">fi</span></span><br><span class="line"></span><br><span class="line">[xxx@SF-xxx:] ~/Desktop/Code/Shell/Task $ cat task_Month.sh</span><br><span class="line"><span class="meta">#!/bin/sh</span></span><br><span class="line"><span class="comment">#获取年月</span></span><br><span class="line"><span class="built_in">export</span> LANG=<span class="string">"zh_CN"</span></span><br><span class="line">Month=`date +%Y年%m月`</span><br><span class="line">Time=`date`</span><br><span class="line"><span class="built_in">cd</span> /Users/xxx/Desktop/SF-Resource/工作日志/ &amp;&amp;</span><br><span class="line"><span class="comment">#创建工作日志文档（判断）</span></span><br><span class="line"><span class="keyword">if</span> [ ! -d <span class="variable">$Month</span> ];<span class="keyword">then</span></span><br><span class="line">mkdir <span class="variable">$Month</span></span><br><span class="line"><span class="comment">#运行完成写入日志</span></span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$Time</span><span class="string">'成功创建了文件夹'</span><span class="variable">$Month</span> &gt;&gt; /Users/xxx/Desktop/Code/Shell/Log/task_Month.log</span><br><span class="line"><span class="keyword">else</span></span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$Month</span><span class="string">"文件夹已经存在，创建失败"</span><span class="variable">$Time</span> &gt;&gt; /Users/xxx/Desktop/Code/Shell/Log/task_Month.log</span><br></pre></td></tr></table></figure></p>
+<p>当运行task_Day.sh的时候，首先会判断今天是否为周末。如果不是的话就会去寻找创建当日的工作目录，并生成相应的工作日志。如果判断出当日为周一，或者新月份的开始，则会调用相应的脚本。生成对于的工作目录。</p>
+<h3>Mac下的定时任务</h3>
+<p>在 Mac 中定时任务的运行，推荐使用 Schedule jobs using launchd。需要我们手动写一个plist来创建一个定时任务</p>
+<p>plis的编写有专门的语法，感兴趣的同学可以去学习一下。其实如果是简单使用的话，还是很简单的。</p>
+<p>如下是我创建的plist程序:</p>
+<p><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="php"><span class="meta">&lt;?</span>xml version=<span class="string">"1.0"</span> encoding=<span class="string">"UTF-8"</span><span class="meta">?&gt;</span></span></span><br><span class="line"><span class="meta">&lt;!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd"&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">plist</span> <span class="attr">version</span>=<span class="string">"1.0"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dict</span>&gt;</span></span><br><span class="line">  <span class="comment">&lt;!-- Label唯一的标识 --&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">key</span>&gt;</span>Label<span class="tag">&lt;/<span class="name">key</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">string</span>&gt;</span>wang.Backup.task.plist<span class="tag">&lt;/<span class="name">string</span>&gt;</span></span><br><span class="line">  <span class="comment">&lt;!-- 指定要运行的脚本 --&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">key</span>&gt;</span>ProgramArguments<span class="tag">&lt;/<span class="name">key</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">array</span>&gt;</span></span><br><span class="line">  <span class="comment">&lt;!-- 指定要运行的脚本 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">string</span>&gt;</span>osascript<span class="tag">&lt;/<span class="name">string</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">string</span>&gt;</span>/Users/xxx/Desktop/Code/Shell/Task/backup.scpt<span class="tag">&lt;/<span class="name">string</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">array</span>&gt;</span></span><br><span class="line">  <span class="comment">&lt;!-- 指定要运行的时间 --&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">&lt;!-- &lt;key&gt;StartInterval&lt;/key&gt;</span></span><br><span class="line"><span class="comment">  &lt;integer&gt;5&lt;/integer&gt; --&gt;</span></span><br><span class="line">  </span><br><span class="line">  <span class="tag">&lt;<span class="name">key</span>&gt;</span>StartCalendarInterval<span class="tag">&lt;/<span class="name">key</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">dict</span>&gt;</span>    </span><br><span class="line">        <span class="tag">&lt;<span class="name">key</span>&gt;</span>Weekday<span class="tag">&lt;/<span class="name">key</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">integer</span>&gt;</span>1<span class="tag">&lt;/<span class="name">integer</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">key</span>&gt;</span>Minute<span class="tag">&lt;/<span class="name">key</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">integer</span>&gt;</span>30<span class="tag">&lt;/<span class="name">integer</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">key</span>&gt;</span>Hour<span class="tag">&lt;/<span class="name">key</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">integer</span>&gt;</span>11<span class="tag">&lt;/<span class="name">integer</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">dict</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- 标准输出文件 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">key</span>&gt;</span>StandardOutPath<span class="tag">&lt;/<span class="name">key</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">string</span>&gt;</span>/Users/xxx/Desktop/Code/Shell/Log/food.log<span class="tag">&lt;/<span class="name">string</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- 标准错误输出文件，错误日志 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">key</span>&gt;</span>StandardErrorPath<span class="tag">&lt;/<span class="name">key</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">string</span>&gt;</span>/Users/xxx/Desktop/Code/Shell/Log/food.err<span class="tag">&lt;/<span class="name">string</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dict</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">plist</span>&gt;</span>xxx</span><br></pre></td></tr></table></figure></p>
+<p>其中 “&lt;array&gt;” 标签中指定了运行脚本的位置， “&lt;string&gt;” 中则指定了运行脚本的解析器。</p>
+<p>对于指定的运行时间，则包括了Hour Day Month 等等。</p>
+<p><figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&lt;!<span class="comment">-- Minute &lt;integer&gt;</span></span><br><span class="line">The minute <span class="keyword">on</span> which this job will be <span class="built_in">run</span>.</span><br><span class="line"></span><br><span class="line">Hour &lt;<span class="built_in">integer</span>&gt;</span><br><span class="line">The hour <span class="keyword">on</span> which this job will be <span class="built_in">run</span>.</span><br><span class="line"></span><br><span class="line">Day &lt;<span class="built_in">integer</span>&gt;</span><br><span class="line">The <span class="built_in">day</span> <span class="keyword">on</span> which this job will be <span class="built_in">run</span>.</span><br><span class="line"></span><br><span class="line">Weekday &lt;<span class="built_in">integer</span>&gt;</span><br><span class="line">The <span class="built_in">weekday</span> <span class="keyword">on</span> which this job will be <span class="built_in">run</span> (<span class="number">0</span> <span class="keyword">and</span> <span class="number">7</span> are Sunday).</span><br><span class="line"></span><br><span class="line">Month &lt;<span class="built_in">integer</span>&gt;</span><br><span class="line">The <span class="built_in">month</span> <span class="keyword">on</span> which this job will be <span class="built_in">run</span>. <span class="comment">--&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>plist编写完毕以后，我们需要将文件放到对应的位置中。并通过命令将定时任务加载到系统任务中。定时任务的启动分为以下4个位置，一般放第一个位置就可以（这里要注意一些文件的执行权限问题）：</p>
+<p><figure class="highlight gauss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">~/<span class="keyword">Library</span>/LaunchAgents 由用户自己定义的任务项(放这里，注意权限问题)</span><br><span class="line">/<span class="keyword">Library</span>/LaunchAgents 由管理员为用户定义的任务项</span><br><span class="line">/<span class="keyword">Library</span>/LaunchDaemons 由管理员定义的守护进程任务项</span><br><span class="line">/<span class="keyword">System</span>/<span class="keyword">Library</span>/LaunchAgents 由Mac OS X为用户定义的任务项</span><br><span class="line">/<span class="keyword">System</span>/<span class="keyword">Library</span>/LaunchDaemons 由Mac OS X定义的守护进程任务项</span><br></pre></td></tr></table></figure></p>
+<p>最后我们需要通过命令，将任务加载到系统的进程中。以下列出了加载任务所使用的一些命令。</p>
+<p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- </span><br><span class="line"><span class="meta"> #</span><span class="bash"> 加载任务, -w选项会将plist文件中无效的key覆盖掉，建议加上</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> launchctl load -w com.demo.plist</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 删除任务</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> launchctl unload -w com.demo.plist</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 查看任务列表, 使用 grep <span class="string">'任务部分名字'</span> 过滤</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> launchctl list | grep <span class="string">'com.demo'</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 开始任务</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> launchctl start  com.demo.plist</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 结束任务</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> launchctl stop   com.demo.plist --&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>希望大家通过这篇博文，能够更加高效的利用手里的Mac。将工作中大量的重复工作，通过脚本的方式自动运行。
+最后祝所有刚步入工作岗位的应届生么，在公司工作愉快！</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>Donate comment here</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>Donate</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.jpg" alt="wangyh WeChat Pay"/>
+        <p>WeChat Pay</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.jpg" alt="wangyh Alipay"/>
+        <p>Alipay</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Mac/" rel="tag"># Mac</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/08/30/Mac-脚本命令/" rel="next" title="Mac 脚本命令">
+                <i class="fa fa-chevron-left"></i> Mac 脚本命令
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/header.jpg"
+                alt="wangyh" />
+            
+              <p class="site-author-name" itemprop="name">wangyh</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives">
+              
+                  <span class="site-state-item-count">17</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-name">categories</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-name">tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/onlywangyh" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:wangyuehan_1993@sina.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">1.</span> <span class="nav-text">快速提高工作效率-Mac自动化脚本</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">1.0.1.</span> <span class="nav-text">定时任务</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">1.0.2.</span> <span class="nav-text">定制化脚本</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">1.0.3.</span> <span class="nav-text">Mac下的定时任务</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">wangyh</span>
+
+  
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>访问人数
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>访问总量
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      次
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("28a4oiiKhqW9fxkHvtaUOWlp-gzGzoHsz", "OU7VBDcQqMfVENMauznmmf8w");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
